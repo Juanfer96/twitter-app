@@ -6,6 +6,7 @@ import { SettingsPageComponent } from "./components/settings-page/settings-page.
 import { TweetDetailComponent } from "./components/tweet-detail/tweet-detail.component";
 
 const routes: Routes = [
+  { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", component: HomePageComponent },
   { path: "search", component: SearchPageComponent },
   { path: "settings", component: SettingsPageComponent },
