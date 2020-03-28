@@ -1,1 +1,16 @@
 <p>home-page works!</p>
+<div>
+  <ul>
+    <li *ngFor="let twit of Tweets">
+      <img src="{{ twit.user.profile_image_url }}" alt="" />
+      <p>{{ twit.user.name }}</p>
+      <span> @{{ twit.user.screen_name }}</span>
+      <span> {{ twit.created_at | date: "medium" }}</span>
+      <p>{{ twit.text }}</p>
+      <span> retweets: {{ twit.retweet_count }} </span>
+      <span> {{ twit.retweeted }} </span>
+      <span> favorites: {{ twit.favorite_count }} </span>
+      <span> {{ twit.favorited }} </span>
+    </li>
+  </ul>
+</div>
