@@ -1,0 +1,26 @@
+.list{
+    margin: 0 auto;
+    padding: 0;
+}
+.list-item{
+    list-style-type: none;
+    padding: 1em;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: rgb(148, 148, 148);
+}
+
+.id-number{
+    float: left;
+    font-size: 1em;
+    font-weight: 700;
+    color: rgb(148, 148, 148);
+}
+.name{
+    font-size: 1em;
+}
+
+.tweet-volume{
+    color: rgb(148, 148, 148);
+
+}

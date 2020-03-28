@@ -15,7 +15,17 @@ export class TrendComponent implements OnInit {
 
   ngOnInit(): void {
     this.trendService.getTrends().
-      subscribe( data => this.trends= data[0].trends )
+      subscribe( data => {
+        this.trends= data[0].trends;
+        this.generateId();
+      })
+  }
+
+  generateId(): void{
+    let i = 0;
+    this.trends.forEach(item => {
+      item.id = i++;
+    })
   }
 
 
