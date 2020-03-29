@@ -12,6 +12,8 @@ import { HomePageComponent } from "./components/home-page/home-page.component";
 import { SearchPageComponent } from "./components/search-page/search-page.component";
 import { SettingsPageComponent } from "./components/settings-page/settings-page.component";
 import { HttpClientModule } from "@angular/common/http";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { HttpClientModule } from "@angular/common/http";
     SearchPageComponent,
     SettingsPageComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent]
 })
