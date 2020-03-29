@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HomePageComponent } from './../home-page/home-page.component';
+import { ActivatedRoute } from '@angular/router';
+import { ITweet } from './../../interfaces/tweetInterface';
 
 @Component({
   selector: 'app-tweet-detail',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TweetDetailComponent implements OnInit {
 
-  constructor() { }
+  tt: ITweet;
 
-  ngOnInit(): void {
+  constructor(private activeRoute: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.tt = this.activeRoute.snapshot.data.id;
   }
 
 }
