@@ -35,7 +35,7 @@ li {
 
 .tweetBody {
   margin-left: 3.7rem;
-  margin-right: 0.3rem;
+  margin-right: auto;
 }
 
 .tweetFooter {
@@ -59,7 +59,7 @@ li {
   .userName,
   .screenName,
   .timeAgoTweet,
-  .tweetContent,
+  .tweetBody,
   .text {
     vertical-align: 0.4rem;
     font-size: 0.6rem;
