@@ -1,6 +1,7 @@
 .footer{
     background-color: #005c7e;
     padding: 1em .5em 0 1em;
+    margin-top: .5em;
 }
 .footer-item{
     display: inline-block;
