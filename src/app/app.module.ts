@@ -14,6 +14,7 @@ import { SettingsPageComponent } from "./components/settings-page/settings-page.
 import { HttpClientModule } from "@angular/common/http";
 import { DateAgoPipe } from "./pipes/date-ago.pipe";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
