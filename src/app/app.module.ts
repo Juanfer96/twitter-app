@@ -12,7 +12,8 @@ import { HomePageComponent } from "./components/home-page/home-page.component";
 import { SearchPageComponent } from "./components/search-page/search-page.component";
 import { SettingsPageComponent } from "./components/settings-page/settings-page.component";
 import { HttpClientModule } from "@angular/common/http";
-import { DateAgoPipe } from './pipes/date-ago.pipe';
+import { DateAgoPipe } from "./pipes/date-ago.pipe";
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,12 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     SettingsPageComponent,
     DateAgoPipe
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    InfiniteScrollModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
