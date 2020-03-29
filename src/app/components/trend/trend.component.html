@@ -1,11 +1,13 @@
+<h3 class="subtitle">Trends for you</h3>
 <ol class="list">
     <li class="list-item" *ngFor="let trend of trends">
         <div class="id-number">{{trend.id}}</div>
-        <div class="name">{{trend.name}}</div>     
-        <div  *ngIf="trend.tweet_volume == null; then thenBlock else elseBlock" class="tweet-volume"></div>
-        <ng-template  #thenBlock >0 Tweets</ng-template>
-        <ng-template #elseBlock >{{trend.tweet_volume}} Tweets</ng-template>
-        
+        <div class="trend-wrapper">
+            <div class="name">{{trend.name}}</div>     
+            <div  *ngIf="trend.tweet_volume == null; then thenBlock else elseBlock" ></div>
+            <ng-template  #thenBlock ><div class="tweet-volume">0 Tweets</div></ng-template>
+            <ng-template #elseBlock ><div class="tweet-volume">{{trend.tweet_volume}} Tweets</div></ng-template>
+        </div>
     </li>   
   </ol>
   

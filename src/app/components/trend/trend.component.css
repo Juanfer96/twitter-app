@@ -1,26 +1,101 @@
+.subtitle{
+    margin-left: .7em;
+    font-size: 1.2em;
+}
 .list{
     margin: 0 auto;
     padding: 0;
 }
 .list-item{
     list-style-type: none;
-    padding: 1em;
+    padding: 1em 0 1em 1.5em;
     border-top: solid 1px;
     border-bottom: solid 1px;
-    border-color: rgb(148, 148, 148);
+    border-color: rgb(230, 230, 230);
+    height: 2.6em;
+    position: relative;
 }
 
-.id-number{
-    float: left;
-    font-size: 1em;
+.id-number{ 
+    font-size: .9em;
     font-weight: 700;
-    color: rgb(148, 148, 148);
+    color: rgb(185, 185, 185);
+    width: 2.8em;
+    height:inherit;
+    line-height: 2.6em;
+    float: left;
+}
+.trend-wrapper{    
+    font-weight: 500;
+    float: left;
 }
 .name{
-    font-size: 1em;
+    font-size: .9em;
+    margin-bottom: .5em;
+    color: rgb(46, 46, 46);
+  
 }
 
 .tweet-volume{
+    font-size: .8em;
     color: rgb(148, 148, 148);
+   
 
+}
+
+@media only screen and (min-width:500px){
+    .subtitle{
+        font-size: 1.3em;
+    }
+    .id-number{
+        font-size: 1em;
+    }
+    .name{
+        font-size: 1em;
+    }
+    .tweet-volume{
+        font-size: .9em;
+    }
+}
+@media only screen and (min-width:700px){
+    .subtitle{
+        font-size: 1.4em;
+    }
+    .id-number{
+        font-size: 1.1em;
+    }
+    .name{
+        font-size: 1.1em;
+    }
+    .tweet-volume{
+        font-size: 1em;
+    }
+}
+@media only screen and (min-width:900px){
+    .subtitle{
+        font-size: 1.5em;
+    }
+    .id-number{
+        font-size: 1.2em;
+    }
+    .name{
+        font-size: 1.2em;
+    }
+    .tweet-volume{
+        font-size: 1.1em;
+    }
+}
+@media only screen and (min-width:1100px){
+    .subtitle{
+        font-size: 1.6em;
+    }
+    .id-number{
+        font-size: 1.3em;
+    }
+    .name{
+        font-size: 1.3em;
+    }
+    .tweet-volume{
+        font-size: 1.2em;
+    }
 }

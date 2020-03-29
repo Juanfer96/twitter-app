@@ -22,7 +22,7 @@ export class TrendComponent implements OnInit {
   }
 
   generateId(): void{
-    let i = 0;
+    let i = 1;
     this.trends.forEach(item => {
       item.id = i++;
     })
