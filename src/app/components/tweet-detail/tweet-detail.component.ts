@@ -11,7 +11,7 @@ import { ITweet } from './../../interfaces/tweetInterface';
 export class TweetDetailComponent implements OnInit {
 
   tt: ITweet;
-
+  
   constructor(private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {

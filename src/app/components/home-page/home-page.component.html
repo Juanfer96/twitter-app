@@ -2,7 +2,7 @@
 <div>
   <ul>
     <li *ngFor="let tweet of Tweets" (click)="selecc(tweet)">
-      <a routerLink="/TweetDetail/{{ tweet.id }}"></a>
+      <a routerLink="/TweetDetail/{{ tweet.id }}">
         <img src="{{ tweet.user.profile_image_url }}" alt="" />
         <p>{{ tweet.user.name }}</p>
         <span> @{{ tweet.user.screen_name }}</span>
