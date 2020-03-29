@@ -12,6 +12,7 @@ import { HomePageComponent } from "./components/home-page/home-page.component";
 import { SearchPageComponent } from "./components/search-page/search-page.component";
 import { SettingsPageComponent } from "./components/settings-page/settings-page.component";
 import { HttpClientModule } from "@angular/common/http";
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from "@angular/common/http";
     TrendComponent,
     HomePageComponent,
     SearchPageComponent,
-    SettingsPageComponent
+    SettingsPageComponent,
+    DateAgoPipe
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

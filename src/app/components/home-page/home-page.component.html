@@ -6,7 +6,7 @@
         <img src="{{ tweet.user.profile_image_url }}" alt="" />
         <p>{{ tweet.user.name }}</p>
         <span> @{{ tweet.user.screen_name }}</span>
-        <span> {{ tweet.created_at | date: "medium" }}</span>
+        <span> {{ tweet.created_at | dateAgo }}</span>
         <p>{{ tweet.text }}</p>
         <span> retweets: {{ tweet.retweet_count }} </span>
         <span> {{ tweet.retweeted }} </span>
