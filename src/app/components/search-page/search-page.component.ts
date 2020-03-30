@@ -12,6 +12,8 @@ export class SearchPageComponent implements OnInit {
   searchText : string;
   tweets :ITweet[]
   faSearch = faSearch;
+  searching :boolean;
+
   constructor(
      public ts: TweetServiceService
   ) { }
@@ -21,6 +23,16 @@ export class SearchPageComponent implements OnInit {
 
   showSearchResults() :void{
     console.log(this.searchText);
+    if (this.searchText.length >= 3) {
+      this.getTweets();
+      this.searching =true;
+    } else {
+      this.searching = false;
+    }
+  }
+  
+
+  getTweets():void {
     this.ts.getSearchTweets(this.searchText)
     .subscribe( data => {
       this.tweets = data.statuses;
