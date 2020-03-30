@@ -30,7 +30,7 @@ li {
   padding-top: 0;
   margin-top: 0;
   display: inline-block;
-  margin-left: 1.25rem;
+  margin-left: 1rem;
   vertical-align: 0.7rem;
 }
 
@@ -56,16 +56,44 @@ li {
   color: rgb(165, 165, 165);
 }
 
+.imageContent {
+  margin-left: 3.7rem;
+  max-width: 70%;
+}
+
 @media (max-width: 360px) {
   .userName,
   .screenName,
   .timeAgoTweet,
   .tweetBody,
   .text {
-    vertical-align: 0.4rem;
+    vertical-align: 0.5rem;
     font-size: 0.6rem;
   }
+
   .profileImage {
     max-width: 70%;
+  }
+  .imageContent {
+    max-width: 70%;
+    height: 150px;
+  }
+}
+
+@media (max-width: 320px) {
+  .userName,
+  .screenName,
+  .timeAgoTweet,
+  .tweetBody,
+  .text {
+    vertical-align: 0.5rem;
+    font-size: 0.53rem;
+  }
+  .profileImage {
+    max-width: 40%;
+  }
+  .imageContent {
+    max-width: 60%;
+    height: 130px;
   }
 }
