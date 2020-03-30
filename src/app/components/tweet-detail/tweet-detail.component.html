@@ -1,15 +1,18 @@
-<p>tweet-detail works! </p>
+<p>tweet-detail works!</p>
 <div>
-        <p>{{ tt.id }}</p>
-        <img src="{{ tt.user.profile_image_url }}" alt="" />
-        <p>{{ tt.user.name }}</p>
-        <span> @{{ tt.user.screen_name }}</span>
-        <p>{{ tt.text }}</p>
+        <div>
+        <img src="{{ tweet.user.profile_image_url }}" alt="" />
+        </div>
+        <p>{{ tweet.user.name }}</p>
+        
 
-        <span> {{ tt.created_at | date: "medium" }}</span>
+        <span> @{{ tweet.user.screen_name }}</span>
+        <span> {{ tweet.created_at | date: "medium" }}</span>
+        <p>{{ tweet.text }}</p>
+        <span> retweets: {{ tweet.retweet_count }} </span>
+        <span> {{ tweet.retweeted }} </span>
+        <span> favorites: {{ tweet.favorite_count }} </span>
+        <span> {{ tweet.favorited }} </span>
 
-        <span> retweets: {{ tt.retweet_count }} </span>
-        <span> favorites: {{ tt.favorite_count }} </span>
-        <span> {{ tt.favorited }} </span>
-
+  
 </div>

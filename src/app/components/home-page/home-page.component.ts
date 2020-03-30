@@ -13,13 +13,13 @@ export class HomePageComponent implements OnInit {
   
   Tweets: ITweet[];
   
-  tweetSelected: ITweet;
+  /*tweetSelected: ITweet;
   private router: Router;
 
   selecc(tweet: ITweet){
     this.tweetSelected = tweet; 
     this.router.navigateByUrl("/TweetDetail/"); 
-  }
+  }*/
 
   getTweetsTimeLine(): void {
     this.ts.getTweets().subscribe(Tweets => {

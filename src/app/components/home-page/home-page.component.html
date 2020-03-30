@@ -1,7 +1,7 @@
 <p>home-page works!</p>
 <div>
   <ul>
-    <li *ngFor="let tweet of Tweets" (click)="selecc(tweet)">
+    <li *ngFor="let tweet of Tweets" >
       <a routerLink="/TweetDetail/{{ tweet.id }}">
         <img src="{{ tweet.user.profile_image_url }}" alt="" />
         <p>{{ tweet.user.name }}</p>
