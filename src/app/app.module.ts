@@ -16,6 +16,7 @@ import { DateAgoPipe } from "./pipes/date-ago.pipe";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     HttpClientModule,
     InfiniteScrollModule,
     FontAwesomeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
