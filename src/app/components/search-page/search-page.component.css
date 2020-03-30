@@ -28,3 +28,20 @@
     border-color: #1dcaff;
     outline: none;
   }
+
+.input::placeholder {
+color:#1dcaff;
+}
+
+.input::-webkit-input-placeholder {
+    color: #1dcaff;
+}
+.input::-moz-placeholder {
+    color: #1dcaff;
+}
+.input:-ms-input-placeholder {
+    color: #1dcaff;
+}
+.input:-moz-placeholder {
+    color: #1dcaff;
+}
