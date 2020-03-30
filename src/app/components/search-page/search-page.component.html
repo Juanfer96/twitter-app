@@ -1,1 +1,5 @@
+<section class="search">
+    <fa-icon [icon]="faSearch" size="2x" class="icon"></fa-icon>
+    <input class="input" type="text" [(ngModel)]="searchText"  (keyup)="showSearchResults()" placeholder="Search..." />
+</section>
 <app-trend></app-trend>

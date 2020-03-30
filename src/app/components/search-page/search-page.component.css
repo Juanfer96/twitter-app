@@ -1,0 +1,30 @@
+.search{
+    text-align: left;
+    margin: 1em 1em 1em 0;
+    padding-left: 2em;
+}
+.icon{
+    position: relative;
+    left: 2.7em;
+    top: .3em;
+    color: #1dcaff;
+}
+
+.input {
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid #c0deed;
+    border-radius: 4px;
+    font-size: 1.5em;
+    background-color: #c0deed;
+    padding: 12px 20px 12px 55px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  .input:focus {
+    width: 85%;
+    background-color: white;
+    border-color: #1dcaff;
+    outline: none;
+  }

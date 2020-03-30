@@ -13,6 +13,7 @@ import { SearchPageComponent } from "./components/search-page/search-page.compon
 import { SettingsPageComponent } from "./components/settings-page/settings-page.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SearchPageComponent,
     SettingsPageComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
+  imports: [FormsModule,BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent]
 })
