@@ -15,6 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DateAgoPipe } from "./pipes/date-ago.pipe";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
     AppRoutingModule,
     HttpClientModule,
     InfiniteScrollModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
