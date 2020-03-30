@@ -27,7 +27,6 @@ export class HomePageComponent implements OnInit {
   }
 
   onScroll() {
-    console.log("scrolled");
     this.spinner.show(); //shows the spinner while the tweets are loading
     if (this.cont >= 200) {
       //when all the maximum number of tweets are loaded,a message is displayed in the html of the component
