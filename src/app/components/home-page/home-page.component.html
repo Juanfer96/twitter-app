@@ -30,6 +30,9 @@
           </div>
         </a>
       </li>
+      <div *ngIf="allTweetsLoaded">
+        <p>There are no more tweets yo display, sorry</p>
+      </div>
     </div>
   </ul>
 </div>

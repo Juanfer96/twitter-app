@@ -11,9 +11,10 @@ export class HomePageComponent implements OnInit {
   constructor(public ts: TweetServiceService) {}
   Tweets: ITweet[];
   notscrolly = true;
+  allTweetsLoaded = false;
   initialTimeLineTweets = 50; //the initial tweets that are going to we displayed
   index = 1; //the index used to keep displaying tweets in the timeline
-  cont: number;
+  cont: number; //used to count the tweets on the timeline
 
   getTweetsTimeLine(): void {
     this.ts.getTweets(this.initialTimeLineTweets).subscribe(Tweets => {
@@ -24,12 +25,17 @@ export class HomePageComponent implements OnInit {
   onScroll() {
     console.log("scrolled");
 
+    if (this.cont >= 200) {
+      //when all the maximum number of tweets are loaded,a message is displayed in the html of the component
+      this.allTweetsLoaded = true;
+      console.log(this.allTweetsLoaded);
+    }
+
     if (this.notscrolly) {
       this.notscrolly = false;
       this.index++;
       this.cont = this.initialTimeLineTweets * this.index;
       this.addNewTeetsTimeLine(this.cont);
-      console.log("Tweets on screen" + this.cont);
     }
   }
 
