@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { TweetServiceService } from "src/app/services/tweet-service.service";
 import { ITweet } from "src/app/interfaces/tweetInterface";
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: "app-home-page",
@@ -8,7 +9,10 @@ import { ITweet } from "src/app/interfaces/tweetInterface";
   styleUrls: ["./home-page.component.css"]
 })
 export class HomePageComponent implements OnInit {
-  constructor(public ts: TweetServiceService) {}
+  constructor(
+    public ts: TweetServiceService,
+    private spinner: NgxSpinnerService
+  ) {}
   Tweets: ITweet[];
   notscrolly = true;
   allTweetsLoaded = false;
@@ -24,7 +28,7 @@ export class HomePageComponent implements OnInit {
 
   onScroll() {
     console.log("scrolled");
-
+    this.spinner.show(); //shows the spinner while the tweets are loading
     if (this.cont >= 200) {
       //when all the maximum number of tweets are loaded,a message is displayed in the html of the component
       this.allTweetsLoaded = true;
@@ -43,6 +47,7 @@ export class HomePageComponent implements OnInit {
     this.ts.getTweets(count).subscribe(Tweets => {
       this.Tweets = Tweets;
       this.notscrolly = true;
+      this.spinner.hide(); //hides the spinner when the time line is loaded
     });
   }
 
