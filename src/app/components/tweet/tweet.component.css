@@ -1,8 +1,8 @@
 * {
-  color: black;
+  color: rgb(83, 83, 83);
   margin: 0 auto;
   padding: 0;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 a {
@@ -12,8 +12,8 @@ a {
 }
 
 li {
-  border-top: 1px solid rgb(165, 165, 165);
-  border-bottom: 1px solid rgb(165, 165, 165);
+  border-top: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid rgb(230, 230, 230);
   list-style-type: none;
   max-width: 100%;
 }
@@ -37,25 +37,28 @@ li {
 .tweetBody {
   margin-left: 3.7rem;
   margin-right: auto;
+  font-size: .7em;
+  padding: .6rem 0 .6rem 0;
 }
 
 .tweetFooter {
+  color: rgb(206, 206, 206);
   display: inline-block;
   margin-left: 3.7rem;
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .userName {
   font-weight: bold;
 }
 .screenName {
-  color: rgb(165, 165, 165);
+  color: rgb(185, 185, 185);
 }
 
 .timeAgoTweet {
   text-align: right;
-  color: rgb(165, 165, 165);
+  color: rgb(185, 185, 185);
 }
 
 .imageContent {
@@ -63,7 +66,28 @@ li {
   margin-left: 3.7rem;
   max-width: 70%;
 }
+/*
+@media only screen and (min-width:500px){
+  {
+  .userName,
+  .screenName,
+  .timeAgoTweet,
+  .tweetBody,
+  .text {
+    vertical-align: 0.5rem;
+    font-size: 0.6rem;
+  }
 
+  .profileImage {
+    max-width: 70%;
+  }
+  .imageContent {
+    max-width: 70%;
+    height: 150px;
+  }
+}
+
+}
 @media (max-width: 360px) {
   .userName,
   .screenName,
@@ -100,3 +124,4 @@ li {
     height: 130px;
   }
 }
+ */
