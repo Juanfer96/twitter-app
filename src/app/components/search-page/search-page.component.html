@@ -2,7 +2,7 @@
     <fa-icon [icon]="faSearch" size="2x" class="icon"></fa-icon>
     <input class="input" type="text" [(ngModel)]="searchText"  (keyup)="showSearchResults()" placeholder="Search..." />
 </section>
-<ul>
+<ul *ngIf="searching">
     <div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
         <app-tweet [Tweets]="tweets"></app-tweet>
         <div *ngIf="allTweetsLoaded">
@@ -21,4 +21,4 @@
         bdColor="inherit"
     ></ngx-spinner>
 </div>
-<app-trend *ngIf="!searching"></app-trend>
+<app-trend></app-trend>
