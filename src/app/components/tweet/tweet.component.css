@@ -1,0 +1,102 @@
+* {
+  color: black;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 0.7rem;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  border-top: 1px solid rgb(165, 165, 165);
+  border-bottom: 1px solid rgb(165, 165, 165);
+  list-style-type: none;
+  max-width: 100%;
+}
+
+.profileImage {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-top: 0.625rem;
+  display: inline-block;
+  margin-left: 0.4rem;
+}
+
+.tweetHead {
+  padding-top: 0;
+  margin-top: 0;
+  display: inline-block;
+  margin-left: 1rem;
+  vertical-align: 0.7rem;
+}
+
+.tweetBody {
+  margin-left: 3.7rem;
+  margin-right: auto;
+}
+
+.tweetFooter {
+  display: inline-block;
+  margin-left: 3.7rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.userName {
+  font-weight: bold;
+}
+.screenName {
+  color: rgb(165, 165, 165);
+}
+
+.timeAgoTweet {
+  text-align: right;
+  color: rgb(165, 165, 165);
+}
+
+.imageContent {
+  margin-top: 0.3rem;
+  margin-left: 3.7rem;
+  max-width: 70%;
+}
+
+@media (max-width: 360px) {
+  .userName,
+  .screenName,
+  .timeAgoTweet,
+  .tweetBody,
+  .text {
+    vertical-align: 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .profileImage {
+    max-width: 70%;
+  }
+  .imageContent {
+    max-width: 70%;
+    height: 150px;
+  }
+}
+
+@media (max-width: 320px) {
+  .userName,
+  .screenName,
+  .timeAgoTweet,
+  .tweetBody,
+  .text {
+    vertical-align: 0.5rem;
+    font-size: 0.53rem;
+  }
+  .profileImage {
+    max-width: 40%;
+  }
+  .imageContent {
+    max-width: 60%;
+    height: 130px;
+  }
+}

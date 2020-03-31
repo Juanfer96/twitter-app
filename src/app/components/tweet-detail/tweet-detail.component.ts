@@ -14,24 +14,28 @@ import { map, catchError } from "rxjs/operators";
 })
 export class TweetDetailComponent implements OnInit {
 
-  tt: ITweet;
+      
+  constructor(
+    private http: HttpClient, public ts: TweetServiceService, private route: ActivatedRoute) { }
 
-    
-  constructor(private http: HttpClient, public ts: TweetServiceService, private route: ActivatedRoute) { }
+  public tweetId: string;
+    Tweet: ITweet;
 
-  public tweetId: number;
-   tweet: ITweet;
-
-  getTweetById(): void {
+  /*getTweetById(): void {
     this.ts.getTweet(this.tweetId).subscribe(Tweet => {
       this.tweet = Tweet;
       console.log(JSON.stringify(this.tweet));
       });
-  }
+  }*/
   getId(): void{
-    let id = parseInt(this.route.snapshot.paramMap.get("id"));
+    let id = this.route.snapshot.paramMap.get("id")
     this.tweetId = id;
+    console.log(id);
+    console.log(id.length);
+    
     };
+
+
     getprueba() {
       return {id: 7189941846000,
         created_at: "Fri Sep 04 05:24:33 +0000 2009",
@@ -43,6 +47,10 @@ export class TweetDetailComponent implements OnInit {
         },
       
         text: "RT @MisterNo_: Yo viendo como el mundo se esta yendo a la mierda https://t.co/R6XteGytVA",
+        entities:{
+          media:{
+        media_url: "http://pbs.twimg.com/media/DglG_r-UYAER3X4.jpg"
+        },},
         retweet_count: 300,
         favorite_count: 200,
         favorited: true,
@@ -51,15 +59,21 @@ export class TweetDetailComponent implements OnInit {
 
 
   ngOnInit(): void {
-    /*
-      this.getId();
-      this.getTweetById();
-      console.log(this.tweet);
-      console.log(this.tweetId);
-         */
-        this.tweet=this.getprueba();
-    }
+    
+    this.getId();
+    this.ts.getIdTweet(this.tweetId)
+    .subscribe( data => {
+      this.Tweet = data.statuses[0];
 
-  } 
+      console.log(this.Tweet);
+      console.log(data);
+
+      
+
+      })
+    /*
+    this.tweet=this.getprueba();*/
+  }
+} 
       
 

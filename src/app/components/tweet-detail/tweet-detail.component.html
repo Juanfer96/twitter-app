@@ -1,23 +1,27 @@
 <h3 class="subtitle">Tweets Detail </h3>
-<ol class="list">
-      <div class="id-number">{{ tweet.id }}</div>
-    <div class="trend-wrapper"></div>
-      <div class="name">{{ tweet.id }}</div>
-      
-</ol>
+<p>{{Tweet.id}}</p>
 
-<p>tweet-detail!</p>
-<div>
+
+  <div class="footer-tweet">
+        <div class="profile-image-url">
+            <img src="{{ Tweet.user.profile_image_url }}" alt="" />
+        </div>
+        <div>
+                <span class="user-name">
+                        <p>{{ Tweet.user.name }}</p>
+                </span>
+                <span class="user-screen-name"> @{{ Tweet.user.screen_name }}</span>
+        </div>
+        <div>
+  <span> {{Tweet.created_at | date: "medium" }}</span>
+  <p>{{ Tweet.text }}</p>
   <div>
-    <img src="{{ tweet.user.profile_image_url }}" alt="" />
+        <img src="{{ Tweet.entities.media.media_url }}" alt="" />
+  
+  <span> retweets: {{ Tweet.retweet_count }} </span>
+  <span> {{ Tweet.retweeted }} </span>
+  <span> favorites: {{ Tweet.favorite_count }} </span>
+  <span> {{ Tweet.favorited }} </span>
   </div>
-  <p>{{ tweet.user.name }}</p>
-
-  <span> @{{ tweet.user.screen_name }}</span>
-  <span> {{ tweet.created_at | date: "medium" }}</span>
-  <p>{{ tweet.text }}</p>
-  <span> retweets: {{ tweet.retweet_count }} </span>
-  <span> {{ tweet.retweeted }} </span>
-  <span> favorites: {{ tweet.favorite_count }} </span>
-  <span> {{ tweet.favorited }} </span>
 </div>
+

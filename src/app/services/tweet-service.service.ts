@@ -1,34 +1,51 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { map, catchError } from "rxjs/operators";
+import { ITweet } from '../interfaces/tweetInterface';
 
 @Injectable({
   providedIn: "root"
 })
 export class TweetServiceService {
-
-  private trendsUrl = 'http://localhost:8080/show?id=1011417658833551361';
-
+  private searchURL = 'http://localhost:8080/search?q=';
+  private searchId = 'http://localhost:8080/show?id=';
+  
   constructor(private http: HttpClient) {}
 
-    getTweets(): Observable<any> {
-    return this.http.get<any>("http://localhost:8080/timeline?count=100").pipe(
-      map(data => data),
-      catchError(err => {
-        console.log(err);
-        return err;
-      })
+  getTweets(tweetsToDisplay: number): Observable<any> {
+    return this.http
+      .get<any>(`http://localhost:8080/timeline?count=${tweetsToDisplay}`)
+      .pipe(
+        map(data => data),
+        catchError(err => {
+          console.log(err);
+          return err;
+        })
+      );
+  }
+
+  getSearchTweets (searchText : string): Observable<any> {
+    return this.http.get<any>(this.searchURL+searchText)
+    .pipe(
+      catchError(this.handleError<ITweet[]>('getSearchTweets', []))
     );
   }
-  getTweet(idTweet:number): Observable<any> {
-    
-    return this.http.get<any>(this.trendsUrl).pipe(
-      
-      catchError(err => {
-        console.log(err);
-        return err;
-      })
+
+
+  getIdTweet (searchId : string): Observable<any> {
+    return this.http.get<any>(this.searchURL+searchId)
+    .pipe(
+      catchError(this.handleError<ITweet[]>('getIdTweet', []))
     );
   }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    };
+  }
+
+
 }

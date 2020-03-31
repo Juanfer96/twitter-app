@@ -9,6 +9,13 @@ export interface ITweet {
   };
 
   text: string;
+
+  entities: {
+    media: {
+      media_url: string;
+    };
+  };
+
   retweet_count: number;
   favorite_count: number;
   favorited: boolean;
