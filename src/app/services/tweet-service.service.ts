@@ -11,14 +11,16 @@ export class TweetServiceService {
   private searchURL = 'http://localhost:8080/search?q=';
   constructor(private http: HttpClient) {}
 
-  getTweets(): Observable<any> {
-    return this.http.get<any>("http://localhost:8080/timeline?count=100").pipe(
-      map(data => data),
-      catchError(err => {
-        console.log(err);
-        return err;
-      })
-    );
+  getTweets(tweetsToDisplay: number): Observable<any> {
+    return this.http
+      .get<any>(`http://localhost:8080/timeline?count=${tweetsToDisplay}`)
+      .pipe(
+        map(data => data),
+        catchError(err => {
+          console.log(err);
+          return err;
+        })
+      );
   }
 
   getSearchTweets (searchText : string): Observable<any> {
