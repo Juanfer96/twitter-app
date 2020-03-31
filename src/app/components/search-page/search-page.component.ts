@@ -13,7 +13,7 @@ export class SearchPageComponent implements OnInit {
   searchText : string;
   tweets :ITweet[]
   faSearch = faSearch;
-  searching :boolean;
+  searching :boolean =false;
 
   notscrolly :boolean = true;
   allTweetsLoaded :boolean = false;
@@ -48,7 +48,6 @@ export class SearchPageComponent implements OnInit {
     this.ts.getSearchTweets(this.searchText,count)
     .subscribe( data => {
       this.tweets = data.statuses;
-      console.log(count)
     })
   }
 
@@ -72,6 +71,16 @@ export class SearchPageComponent implements OnInit {
     this.notscrolly = true;
     this.spinner.hide(); //hides the spinner when the time line is loaded
    
+  }
+
+  setSelectedTrend(trendName: string){
+    trendName = trendName.slice(1);
+    this.searchText= trendName;
+    this.showSearchResults();
+  }
+  setQuicklySearch(search: string){
+    this.searchText= search;
+    this.showSearchResults();
   }
 }
 
