@@ -1,7 +1,11 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+  }
 .search{
     text-align: left;
-    margin: 1em 1em 1em 0;
-    padding-left: 2em;
+    margin: 1em 1em 1em 2em;
+ 
 }
 .icon{
     position: relative;
@@ -47,9 +51,28 @@ color:#1dcaff;
 }
 
 .quickly-search{
-    text-align: center;
+    text-align: left;
+    margin: 0 0 .5em 4em;
 }
 .quickly-search-item{
+    color: #a1becc;
+    font-weight: bold;
     text-align: center;
     display: inline-block;
+    font-size: 1.3em;
+    padding: .7em;
+}
+.quickly-search-item:hover{
+    color: #1dcaff;
+    background-color: #f8fcfc;
+    cursor: pointer;
+    border-bottom: 2px solid;
+    border-color: #1dcaff;
+}
+
+.subtitle{
+    margin-left: .7em;
+    font-size: 1.2em;
+    margin-top:1.2em;
+    margin-bottom: .9em;
 }
