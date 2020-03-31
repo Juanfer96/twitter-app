@@ -17,6 +17,7 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     InfiniteScrollModule,
     FontAwesomeModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
