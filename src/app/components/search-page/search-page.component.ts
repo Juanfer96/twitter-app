@@ -72,6 +72,12 @@ export class SearchPageComponent implements OnInit {
     this.spinner.hide(); //hides the spinner when the time line is loaded
    
   }
+
+  setSelectedTrend(trendName: string){
+    trendName = trendName.slice(1);
+    this.searchText= trendName;
+    this.showSearchResults();
+  }
 }
 
 

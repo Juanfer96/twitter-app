@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Output , EventEmitter} from '@angular/core';
 import { ITrend } from '../../interfaces/trendInterface'
 import { TrendServiceService } from '../../services/trend-service.service'
 
@@ -10,7 +10,10 @@ import { TrendServiceService } from '../../services/trend-service.service'
 export class TrendComponent implements OnInit {
   trends: ITrend[];
   cont :number =0;
-
+  @Output() selectedTrend = new EventEmitter();
+   
+    
+   
   constructor(private trendService: TrendServiceService ) { }
 
   ngOnInit(): void {
@@ -26,6 +29,11 @@ export class TrendComponent implements OnInit {
     this.trends.forEach(item => {
       item.id = i++;
     })
+  }
+
+  onSelectedTrend(trend) {
+    this.selectedTrend.emit(trend.name);
+    
   }
 
 
