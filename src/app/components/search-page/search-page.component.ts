@@ -17,8 +17,8 @@ export class SearchPageComponent implements OnInit {
 
   notscrolly :boolean = true;
   allTweetsLoaded :boolean = false;
-  initialTimeLineTweets :number = 50; //the initial tweets that are going to we displayed
-  index :number = 1; //the index used to keep displaying tweets in the timeline
+  initialTimeLineTweets :number = 10; //the initial tweets that are going to we displayed
+  index :number = 10; //the index used to keep displaying tweets in the timeline
   cont :number; //used to count the tweets on the timeline
 
   constructor(
@@ -30,14 +30,13 @@ export class SearchPageComponent implements OnInit {
   }
 
   showSearchResults() :void{
-    console.log(this.searchText);
     //To not start an empty search with 3 blanks
     if(this.searchText=== ' '){
       this.searchText = '';
     }
     //Only start searching with 3 characters
     if (this.searchText.length >= 3) {
-      this.getTweets();
+      this.getTweets(this.initialTimeLineTweets);
       this.searching =true;
     } else {
       this.searching = false;
@@ -45,34 +44,34 @@ export class SearchPageComponent implements OnInit {
   }
   
 
-  getTweets():void {
-    this.ts.getSearchTweets(this.searchText)
+  getTweets(count :number):void {
+    this.ts.getSearchTweets(this.searchText,count)
     .subscribe( data => {
       this.tweets = data.statuses;
+      console.log(count)
     })
   }
 
   onScroll() {
     this.spinner.show(); //shows the spinner while the tweets are loading
-    if (this.cont >= 200) {
+    if (this.cont >= 100) {
       //when all the maximum number of tweets are loaded,a message is displayed in the html of the component
       this.allTweetsLoaded = true;
     }
 
     if (this.notscrolly) {
       this.notscrolly = false;
-      this.index++;
-      this.cont = this.initialTimeLineTweets * this.index;
+      this.cont = this.initialTimeLineTweets + this.index;
+      this.index = this.index+10;
       this.addNewTeetsTimeLine(this.cont);
     }
   }
 
   addNewTeetsTimeLine(count: number) {
-    this.ts.getTweets(count).subscribe(tweets => {
-      this.tweets = tweets;
-      this.notscrolly = true;
-      this.spinner.hide(); //hides the spinner when the time line is loaded
-    });
+    this.getTweets(count);   
+    this.notscrolly = true;
+    this.spinner.hide(); //hides the spinner when the time line is loaded
+   
   }
 }
 
