@@ -78,6 +78,10 @@ export class SearchPageComponent implements OnInit {
     this.searchText= trendName;
     this.showSearchResults();
   }
+  setQuicklySearch(search: string){
+    this.searchText= search;
+    this.showSearchResults();
+  }
 }
 
 

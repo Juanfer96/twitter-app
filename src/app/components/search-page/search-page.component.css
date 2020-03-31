@@ -45,3 +45,11 @@ color:#1dcaff;
 .input:-moz-placeholder {
     color: #1dcaff;
 }
+
+.quickly-search{
+    text-align: center;
+}
+.quickly-search-item{
+    text-align: center;
+    display: inline-block;
+}
