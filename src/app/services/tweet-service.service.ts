@@ -23,8 +23,8 @@ export class TweetServiceService {
       );
   }
 
-  getSearchTweets (searchText : string): Observable<any> {
-    return this.http.get<any>(this.searchURL+searchText)
+  getSearchTweets (searchText : string,count :number): Observable<any> {
+    return this.http.get<any>(this.searchURL+searchText+'&count='+count)
     .pipe(
       catchError(this.handleError<ITweet[]>('getSearchTweets', []))
     );
