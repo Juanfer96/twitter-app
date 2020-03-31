@@ -1,32 +1,30 @@
-<li *ngFor="let tweet of Tweets">
-  <a routerLink="/TweetDetail/{{ tweet.id }}">
-    <img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
+<li *ngFor="let tweet of Tweets" routerLink="/TweetDetail/{{ tweet.id }}">
 
-    <div class="tweetHead">
-      <span class="userName">{{ tweet.user.name }}</span>
-      <span class="screenName"> @{{ tweet.user.screen_name }}</span>
-      <span class="timeAgoTweet"> - {{ tweet.created_at | dateAgo }}</span>
-    </div>
+  <img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
 
-    <div class="tweetBody">
-      <span class="text">{{ tweet.text }}</span>
-    </div>
+  <div class="tweetHead">
+    <span class="userName">{{ tweet.user.name }}</span>
+    <span class="screenName"> @{{ tweet.user.screen_name }}</span>
+    <span class="timeAgoTweet"> - {{ tweet.created_at | dateAgo }}</span>
+  </div>
 
-    <div *ngIf="tweet.entities.media">
-      <img
-        src="{{ tweet.entities.media[0].media_url }}"
-        width="400"
-        height="250"
-        alt="img not found"
-        class="imageContent"
-      />
-    </div>
+  <div class="tweetBody">
+    <span class="text">{{ tweet.text }}</span>
+  </div>
 
-    <div class="tweetFooter">
-      <span> retweets: {{ tweet.retweet_count }} </span>
-      <span> {{ tweet.retweeted }} </span>
-      <span> favorites: {{ tweet.favorite_count }} </span>
-      <span> {{ tweet.favorited }} </span>
-    </div>
-  </a>
+  <div *ngIf="tweet.entities.media">
+    <img
+      src="{{ tweet.entities.media[0].media_url }}"
+      width="400"
+      height="250"
+      alt="img not found"
+      class="imageContent"
+    />
+  </div>
+
+  <div class="tweetFooter">
+    <span > retweets: {{ tweet.retweet_count }} </span>
+    <span > favorites: {{ tweet.favorite_count }} </span>
+  </div>
+  
 </li>
