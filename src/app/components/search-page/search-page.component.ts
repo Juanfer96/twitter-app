@@ -23,6 +23,11 @@ export class SearchPageComponent implements OnInit {
 
   showSearchResults() :void{
     console.log(this.searchText);
+    //To not start an empty search with 3 blanks
+    if(this.searchText=== ' '){
+      this.searchText = '';
+    }
+    //Only start searching with 3 characters
     if (this.searchText.length >= 3) {
       this.getTweets();
       this.searching =true;
@@ -40,3 +45,6 @@ export class SearchPageComponent implements OnInit {
   }
 
 }
+
+
+
