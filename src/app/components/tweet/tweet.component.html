@@ -23,8 +23,14 @@
   </div>
 
   <div class="tweetFooter">
-    <span > retweets: {{ tweet.retweet_count }} </span>
-    <span > favorites: {{ tweet.favorite_count }} </span>
+    <div class="retweet">
+      <fa-icon  [icon]="faRetweet" size="2x"></fa-icon>
+      <span > {{ tweet.retweet_count }} </span>
+    </div>
+    <div class="favourite">
+      <fa-icon  [icon]="faHeart" size="2x"></fa-icon>
+      <span > {{ tweet.favorite_count }} </span>
+    </div>
   </div>
   
 </li>

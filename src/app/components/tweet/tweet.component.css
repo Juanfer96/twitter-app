@@ -18,6 +18,9 @@ li:hover{
   background-color: #f8fcfc;
   cursor: pointer;
 }
+li:focus{
+  outline: none;
+}
 
 .profileImage {
   max-width: 100%;
@@ -43,15 +46,29 @@ li:hover{
 }
 
 .tweetFooter {
-  
-  display: inline-block;
   margin-left: 3.7rem;
   margin-bottom: 0.5rem;
   margin-top: 0.8rem;
 }
-.tweetFooter span{
+.retweet,
+.favourite{
   color: rgb(190, 190, 190);
+  display: inline-block;
+  margin-right: 1em;
 }
+.retweet:hover fa-icon{
+  color: rgb(25, 175, 25);
+}
+.retweet:hover span{
+  color: rgb(25, 175, 25);
+}
+.favourite:hover fa-icon{
+  color: rgb(235, 47, 47);
+}
+.favourite:hover span{
+  color: rgb(235, 47, 47);
+}
+
 
 .userName {
   font-weight: bold;
