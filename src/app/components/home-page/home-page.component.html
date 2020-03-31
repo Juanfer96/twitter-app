@@ -1,53 +1,14 @@
-<p>home-page works!</p>
-<div>
-  <ul>
-    <div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
-      <li *ngFor="let tweet of Tweets">
-        <a routerLink="/TweetDetail/{{ tweet.id }}">
-          <img
-            src="{{ tweet.user.profile_image_url }}"
-            alt=""
-            class="profileImage"
-          />
+<ul>
+  <div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+    <app-tweet [Tweets]="Tweets"></app-tweet>
 
-          <div class="tweetHead">
-            <span class="userName">{{ tweet.user.name }}</span>
-            <span class="screenName"> @{{ tweet.user.screen_name }}</span>
-            <span class="timeAgoTweet">
-              - {{ tweet.created_at | dateAgo }}</span
-            >
-          </div>
-
-          <div class="tweetBody">
-            <span class="text">{{ tweet.text }}</span>
-          </div>
-
-          <div *ngIf="tweet.entities.media">
-            <img
-              src="{{ tweet.entities.media[0].media_url }}"
-              width="400"
-              height="250"
-              alt="img not found"
-              class="imageContent"
-            />
-          </div>
-
-          <div class="tweetFooter">
-            <span> retweets: {{ tweet.retweet_count }} </span>
-            <span> {{ tweet.retweeted }} </span>
-            <span> favorites: {{ tweet.favorite_count }} </span>
-            <span> {{ tweet.favorited }} </span>
-          </div>
-        </a>
-      </li>
-
-      <div *ngIf="allTweetsLoaded">
-        <p>There are no more tweets yo display, sorry</p>
-      </div>
+    <div *ngIf="allTweetsLoaded">
+      <p>There are no more tweets yo display, sorry</p>
     </div>
-  </ul>
-</div>
-<footer>
+  </div>
+</ul>
+
+<div>
   <ngx-spinner
     [fullScreen]="false"
     type="line-spin-fade"
@@ -56,4 +17,4 @@
     bdColor="inherit"
   >
   </ngx-spinner>
-</footer>
+</div>
