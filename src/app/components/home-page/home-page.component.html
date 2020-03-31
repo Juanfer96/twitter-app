@@ -3,12 +3,14 @@
     <app-tweet [Tweets]="Tweets"></app-tweet>
 
     <div *ngIf="allTweetsLoaded">
-      <p>There are no more tweets yo display, sorry</p>
+      <p class="allTweetsLoaded">
+        you have already seen all the tweets, upload to see new content
+      </p>
     </div>
   </div>
 </ul>
 
-<div>
+<div class="spinnerBottom">
   <ngx-spinner
     [fullScreen]="false"
     type="line-spin-fade"
