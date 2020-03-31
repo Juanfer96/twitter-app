@@ -1,3 +1,12 @@
+## Our Team 
+  <ul>
+    <li>Marcelo Benjamin Benitez</li>
+    <li>Mauricio Navarro</li>
+    <li>Juan Fernando Pico</li>
+  </ul>
+  
+  Watch our tasks on <a href="https://trello.com/b/BDUWIShv/proyecto-final-bootcamp-ui">Trello</a>
+
 ## Final Project
 
 The following is a sample project to put to practice all the topics learned so far. The definitions and functionalities are provided in a close to reality fashion.
