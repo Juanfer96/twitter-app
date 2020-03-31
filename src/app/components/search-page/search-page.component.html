@@ -2,19 +2,23 @@
     <fa-icon [icon]="faSearch" size="2x" class="icon"></fa-icon>
     <input class="input" type="text" [(ngModel)]="searchText"  (keyup)="showSearchResults()" placeholder="Search..." />
 </section>
-<ul *ngIf="searching === true" >
-    <li *ngFor="let tweet of tweets">
-            <a routerLink="/TweetDetail/{{ tweet.id }}">
-                <img src="{{ tweet.user.profile_image_url }}" alt="" />
-                <p>{{ tweet.user.name }}</p>
-                <span> @{{ tweet.user.screen_name }}</span>
-                <span> {{ tweet.created_at | date: "medium" }}</span>
-                <p>{{ tweet.text }}</p>
-                <span> retweets: {{ tweet.retweet_count }} </span>
-                <span> {{ tweet.retweeted }} </span>
-                <span> favorites: {{ tweet.favorite_count }} </span>
-                <span> {{ tweet.favorited }} </span>
-            </a>
-            </li>   
+<ul>
+    <div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+        <app-tweet [Tweets]="tweets"></app-tweet>
+        <div *ngIf="allTweetsLoaded">
+            <p class="allTweetsLoaded">
+                you have already seen all the tweets, upload to see new content
+            </p>
+        </div>
+    </div>
 </ul>
+<div class="spinnerBottom">
+    <ngx-spinner
+        [fullScreen]="false"
+        type="line-spin-fade"
+        size="medium"
+        color="grey"
+        bdColor="inherit"
+    ></ngx-spinner>
+</div>
 <app-trend></app-trend>
