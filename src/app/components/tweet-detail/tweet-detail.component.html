@@ -1,18 +1,9 @@
 <h3 class="subtitle">Tweets Detail </h3>
 <ol class="list">
-  <li class="list-item" *ngFor="let tt of tweet">
-    <div class="id-number">{{ tt.id }}</div>
-    <div class="trend-wrapper">
-      <div class="name">{{ tt.id }}</div>
-      <div *ngIf="tweet.id == null; then thenBlock; else elseBlock"></div>
-      <ng-template #thenBlock
-        ><div class="tweet-volume">0 Tweets</div></ng-template
-      >
-      <ng-template #elseBlock
-        ><div class="tweet-volume">{{ tweet.id }} Tweets</div></ng-template
-      >
-    </div>
-  </li>
+      <div class="id-number">{{ tweet.id }}</div>
+    <div class="trend-wrapper"></div>
+      <div class="name">{{ tweet.id }}</div>
+      
 </ol>
 
 <p>tweet-detail!</p>
