@@ -63,7 +63,7 @@ export class TweetDetailComponent implements OnInit {
     this.getId();
     this.ts.getIdTweet(this.tweetId)
     .subscribe( data => {
-      this.Tweet = data.statuses[0];
+      this.Tweet = data[0].statuses;
 
       console.log(this.Tweet);
       console.log(data);
