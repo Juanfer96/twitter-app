@@ -8,7 +8,7 @@ import { map, catchError } from "rxjs/operators";
 })
 export class TweetServiceService {
 
-  private trendsUrl = 'http://localhost:8080/show?id=';
+  private trendsUrl = 'http://localhost:8080/show?id=1011417658833551361';
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class TweetServiceService {
   }
   getTweet(idTweet:number): Observable<any> {
     
-    return this.http.get<any>(this.trendsUrl+idTweet).pipe(
+    return this.http.get<any>(this.trendsUrl).pipe(
       
       catchError(err => {
         console.log(err);

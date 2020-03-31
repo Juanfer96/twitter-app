@@ -1,18 +1,32 @@
-<p>tweet-detail works!</p>
+<h3 class="subtitle">Tweets Detail </h3>
+<ol class="list">
+  <li class="list-item" *ngFor="let tt of tweet">
+    <div class="id-number">{{ tt.id }}</div>
+    <div class="trend-wrapper">
+      <div class="name">{{ tt.id }}</div>
+      <div *ngIf="tweet.id == null; then thenBlock; else elseBlock"></div>
+      <ng-template #thenBlock
+        ><div class="tweet-volume">0 Tweets</div></ng-template
+      >
+      <ng-template #elseBlock
+        ><div class="tweet-volume">{{ tweet.id }} Tweets</div></ng-template
+      >
+    </div>
+  </li>
+</ol>
+
+<p>tweet-detail!</p>
 <div>
-        <div>
-        <img src="{{ tweet.user.profile_image_url }}" alt="" />
-        </div>
-        <p>{{ tweet.user.name }}</p>
-        
+  <div>
+    <img src="{{ tweet.user.profile_image_url }}" alt="" />
+  </div>
+  <p>{{ tweet.user.name }}</p>
 
-        <span> @{{ tweet.user.screen_name }}</span>
-        <span> {{ tweet.created_at | date: "medium" }}</span>
-        <p>{{ tweet.text }}</p>
-        <span> retweets: {{ tweet.retweet_count }} </span>
-        <span> {{ tweet.retweeted }} </span>
-        <span> favorites: {{ tweet.favorite_count }} </span>
-        <span> {{ tweet.favorited }} </span>
-
-  
+  <span> @{{ tweet.user.screen_name }}</span>
+  <span> {{ tweet.created_at | date: "medium" }}</span>
+  <p>{{ tweet.text }}</p>
+  <span> retweets: {{ tweet.retweet_count }} </span>
+  <span> {{ tweet.retweeted }} </span>
+  <span> favorites: {{ tweet.favorite_count }} </span>
+  <span> {{ tweet.favorited }} </span>
 </div>

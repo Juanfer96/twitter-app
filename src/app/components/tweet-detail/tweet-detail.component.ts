@@ -25,7 +25,7 @@ export class TweetDetailComponent implements OnInit {
   getTweetById(): void {
     this.ts.getTweet(this.tweetId).subscribe(Tweet => {
       this.tweet = Tweet;
-      console.log(this.tweet);
+      console.log(JSON.stringify(this.tweet));
       });
   }
   getId(): void{
