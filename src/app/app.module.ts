@@ -12,8 +12,11 @@ import { HomePageComponent } from "./components/home-page/home-page.component";
 import { SearchPageComponent } from "./components/search-page/search-page.component";
 import { SettingsPageComponent } from "./components/settings-page/settings-page.component";
 import { HttpClientModule } from "@angular/common/http";
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { DateAgoPipe } from "./pipes/date-ago.pipe";
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -26,9 +29,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TrendComponent,
     HomePageComponent,
     SearchPageComponent,
-    SettingsPageComponent
+    SettingsPageComponent,
+    DateAgoPipe
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FontAwesomeModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    InfiniteScrollModule,
+    FontAwesomeModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
