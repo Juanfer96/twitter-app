@@ -1,18 +1,7 @@
-<<<<<<< HEAD
 .search{
     text-align: left;
     margin: 1em 1em 1em 0;
     padding-left: 2em;
-=======
-* {
-    margin: 0 auto;
-    padding: 0;
-  }
-.search{
-    text-align: left;
-    margin: 1em 1em 1em 2em;
- 
->>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
 }
 .icon{
     position: relative;
