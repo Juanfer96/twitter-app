@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ITrend } from '../interfaces/trendInterface'
 import { HttpClient  } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError,map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

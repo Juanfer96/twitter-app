@@ -1,6 +1,6 @@
 <h3 class="subtitle">Trends for you</h3>
 <ol class="list">
-    <li class="list-item" *ngFor="let trend of trends">
+    <li class="list-item" *ngFor="let trend of trends" (click)="onSelectedTrend(trend)">
         <div class="id-number">{{trend.id}}</div>
         <div class="trend-wrapper">
             <div class="name">{{trend.name}}</div>     

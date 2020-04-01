@@ -1,1 +1,38 @@
-<app-trend></app-trend>
+<section class="search">
+    <fa-icon [icon]="faSearch" size="2x" class="icon"></fa-icon>
+    <input class="input" type="text" [(ngModel)]="searchText"  (keyup)="showSearchResults()" placeholder="Search..." />
+</section>
+
+<div class="quickly-search">
+    <div class="quickly-search-item" (click)="setQuicklySearch('News')">
+        <span>News</span>
+    </div>
+    <div class="quickly-search-item" (click)="setQuicklySearch('Events')">
+        <span>Events</span>
+    </div>
+</div>
+
+
+<ul *ngIf="searching">
+    <h3 class="subtitle"> "{{searchText}}" search results  </h3>
+    <div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+        <app-tweet [Tweets]="tweets"></app-tweet>
+        <div *ngIf="allTweetsLoaded">
+            <p class="allTweetsLoaded">
+                you have already seen all the tweets, upload to see new content
+            </p>
+        </div>
+    </div>
+</ul>
+
+<div class="spinnerBottom">
+    <ngx-spinner
+        [fullScreen]="false"
+        type="line-spin-fade"
+        size="medium"
+        color="grey"
+        bdColor="inherit"
+    ></ngx-spinner>
+</div>
+
+<app-trend (selectedTrend)="setSelectedTrend($event)"></app-trend>
