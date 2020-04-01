@@ -70,7 +70,6 @@ export class TweetDetailComponent implements OnInit {
 
       
 
-      })
     /*
     this.tweet=this.getprueba();*/
   }
