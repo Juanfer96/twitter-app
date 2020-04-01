@@ -4,30 +4,42 @@ import { Observable, of } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { ITimeLineaConfiguration } from "../interfaces/timeLineConfigurationInterface";
 import { ITweet } from "../interfaces/tweetInterface";
+import { element } from "protractor";
 
 @Injectable({
   providedIn: "root"
 })
 export class TweetServiceService {
   private searchURL = "http://localhost:8080/search?q=";
+
   constructor(private http: HttpClient) {}
 
   getTweets(tweetsToDisplay: number): Observable<any> {
     return this.http
       .get<any>(`http://localhost:8080/timeline?count=${tweetsToDisplay}`)
       .pipe(
-        map(data =>
-          data.filter(
-            (data: { user: { verified: boolean } }) =>
-              data.user.verified == false
-          )
-        ),
+        map(data => (data = this.finalFilter(data))),
 
         catchError(err => {
           console.log(err);
           return err;
         })
       );
+  }
+
+  filterTweetsByConfiguration(tweet: any) {
+    if (!tweet.user.verified) {
+      return true;
+    }
+
+    return true;
+  }
+
+  finalFilter(tweet: any) {
+    const tweetFiltered = tweet.filter(element =>
+      this.filterTweetsByConfiguration(element)
+    );
+    return tweetFiltered;
   }
 
   getSearchTweets(searchText: string, count: number): Observable<any> {
