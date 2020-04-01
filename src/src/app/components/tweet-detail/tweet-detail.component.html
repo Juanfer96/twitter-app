@@ -1,6 +1,4 @@
-<li *ngFor="let tweet of Tweets" routerLink="/TweetDetail/{{ tweet.id_str }}">
-
-  <img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
+<img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
 
   <div class="tweetHead">
     <span class="userName">{{ tweet.user.name }}</span>
@@ -14,9 +12,8 @@
 
   <div *ngIf="tweet.entities.media">
     <img
-      src="{{ tweet.entities.media[0].media_url }}"
-      width="400"
-      height="250"
+      src="{{ tweet.entities.media.media_url }}"
+      
       alt="img not found"
       class="imageContent"
     />
@@ -24,13 +21,15 @@
 
   <div class="tweetFooter">
     <div class="retweet">
-      <fa-icon  [icon]="faRetweet" size="2x"></fa-icon>
+      
       <span > {{ tweet.retweet_count }} </span>
     </div>
     <div class="favourite">
-      <fa-icon  [icon]="faHeart" size="2x"></fa-icon>
+      
       <span > {{ tweet.favorite_count }} </span>
     </div>
   </div>
   
-</li>
+     
+
+
