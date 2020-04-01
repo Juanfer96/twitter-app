@@ -9,9 +9,14 @@ import { ITimeLineaConfiguration } from "src/app/interfaces/timeLineConfiguratio
 export class SettingsPageComponent implements OnInit {
   timeLineSetting: ITimeLineaConfiguration;
 
-  constructor() {}
+  constructor() {
+    this.timeLineSetting = {
+      hideAccountsNotVerified: JSON.parse(localStorage.getItem("verified"))
+    };
+  }
 
   ngOnInit(): void {
     console.log(this.timeLineSetting);
+    localStorage.setItem("verified", "true");
   }
 }

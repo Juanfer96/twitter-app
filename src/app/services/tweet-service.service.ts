@@ -12,7 +12,13 @@ import { element } from "protractor";
 export class TweetServiceService {
   private searchURL = "http://localhost:8080/search?q=";
 
-  constructor(private http: HttpClient) {}
+  test: ITimeLineaConfiguration;
+
+  constructor(private http: HttpClient) {
+    this.test = {
+      hideAccountsNotVerified: JSON.parse(localStorage.getItem("verified"))
+    };
+  }
 
   getTweets(tweetsToDisplay: number): Observable<any> {
     return this.http
@@ -28,8 +34,8 @@ export class TweetServiceService {
   }
 
   filterTweetsByConfiguration(tweet: any) {
-    if (!tweet.user.verified) {
-      return true;
+    if (this.test.hideAccountsNotVerified && !tweet.user.verified) {
+      return false;
     }
     if (!tweet.user.following) {
       return true;
@@ -38,7 +44,7 @@ export class TweetServiceService {
       return true;
     }
     if (tweet.entities.urls != 0) {
-      return false;
+      return true;
     }
     if (tweet.truncated) {
       return true;
