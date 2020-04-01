@@ -24,6 +24,7 @@ export class HomePageComponent implements OnInit {
     this.ts.getTweets(this.initialTimeLineTweets).subscribe(Tweets => {
       this.Tweets = Tweets;
       console.log(this.Tweets);
+      console.log(Tweets);
     });
   }
 
