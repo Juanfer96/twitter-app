@@ -1,5 +1,4 @@
 * {
-<<<<<<< HEAD
   color: black;
   margin: 0 auto;
   padding: 0;
@@ -18,30 +17,6 @@ li {
   list-style-type: none;
   max-width: 100%;
 }
-=======
-  color: rgb(83, 83, 83);
-  margin: 0 auto;
-  padding: 0;
-  font-size: 0.78rem;
-}
-
-
-li {
-  border-top: 1px solid rgb(230, 230, 230);
-  border-bottom: 1px solid rgb(230, 230, 230);
-  list-style-type: none;
-  max-width: 100%;
-}
-li:hover{
-  border-top: 1px solid #1dcaff;
-  border-bottom: 1px solid #1dcaff;
-  background-color: #f8fcfc;
-  cursor: pointer;
-}
-li:focus{
-  outline: none;
-}
->>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
 
 .profileImage {
   max-width: 100%;
@@ -62,7 +37,6 @@ li:focus{
 .tweetBody {
   margin-left: 3.7rem;
   margin-right: auto;
-<<<<<<< HEAD
 }
 
 .tweetFooter {
@@ -77,52 +51,11 @@ li:focus{
 }
 .screenName {
   color: rgb(165, 165, 165);
-=======
-  font-size: .6em;
-  padding: .6rem 0 .6rem 0;
-}
-
-.tweetFooter {
-  margin-left: 3.7rem;
-  margin-bottom: 0.5rem;
-  margin-top: 0.8rem;
-}
-.retweet,
-.favourite{
-  color: rgb(190, 190, 190);
-  display: inline-block;
-  margin-right: 1em;
-}
-.retweet:hover fa-icon{
-  color: rgb(25, 175, 25);
-}
-.retweet:hover span{
-  color: rgb(25, 175, 25);
-}
-.favourite:hover fa-icon{
-  color: rgb(235, 47, 47);
-}
-.favourite:hover span{
-  color: rgb(235, 47, 47);
-}
-
-
-.userName {
-  font-weight: bold;
-  color:rgb(46, 46, 46)
-}
-.screenName {
-  color: rgb(185, 185, 185);
->>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
 }
 
 .timeAgoTweet {
   text-align: right;
-<<<<<<< HEAD
   color: rgb(165, 165, 165);
-=======
-  color: rgb(185, 185, 185);
->>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
 }
 
 .imageContent {
@@ -131,7 +64,6 @@ li:focus{
   max-width: 70%;
 }
 
-<<<<<<< HEAD
 @media (max-width: 360px) {
   .userName,
   .screenName,
