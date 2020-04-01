@@ -1,0 +1,22 @@
+<ul>
+  <div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
+    <app-tweet [Tweets]="Tweets"></app-tweet>
+
+    <div *ngIf="allTweetsLoaded">
+      <p class="allTweetsLoaded">
+        you have already seen all the tweets, upload to see new content
+      </p>
+    </div>
+  </div>
+</ul>
+
+<div class="spinnerBottom">
+  <ngx-spinner
+    [fullScreen]="false"
+    type="line-spin-fade"
+    size="medium"
+    color="grey"
+    bdColor="inherit"
+  >
+  </ngx-spinner>
+</div>

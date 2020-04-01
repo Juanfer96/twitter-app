@@ -1,8 +1,25 @@
-*{
+* {
   color: rgb(83, 83, 83);
   margin: 0 auto;
   padding: 0;
   font-size: 0.78rem;
+}
+
+
+li {
+  border-top: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid rgb(230, 230, 230);
+  list-style-type: none;
+  max-width: 100%;
+}
+li:hover{
+  border-top: 1px solid #1dcaff;
+  border-bottom: 1px solid #1dcaff;
+  background-color: #f8fcfc;
+  cursor: pointer;
+}
+li:focus{
+  outline: none;
 }
 
 .profileImage {
@@ -83,7 +100,6 @@
   .tweetBody{
     font-size: .8rem;
   }
-  
 }
 
 @media only screen and (min-width:700px){
@@ -109,6 +125,4 @@
   .tweetBody{
     font-size: 1rem;
   }
-  
-  
 }
