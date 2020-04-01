@@ -12,7 +12,7 @@
 
   <div *ngIf="tweet.entities.media">
     <img
-      src="{{ tweet.entities.media.media_url }}"
+      src="{{ tweet.entities.media[0].media_url }}"
       
       alt="img not found"
       class="imageContent"
