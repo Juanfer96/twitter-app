@@ -31,7 +31,18 @@ export class TweetServiceService {
     if (!tweet.user.verified) {
       return true;
     }
-
+    if (!tweet.user.following) {
+      return true;
+    }
+    if (tweet.user.default_profile) {
+      return true;
+    }
+    if (tweet.entities.urls != 0) {
+      return false;
+    }
+    if (tweet.truncated) {
+      return true;
+    }
     return true;
   }
 
