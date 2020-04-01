@@ -98,42 +98,5 @@ li {
   .imageContent {
     max-width: 60%;
     height: 130px;
-=======
-@media only screen and (min-width:500px){
-  .userName,
-  .screenName,
-  .timeAgoTweet,
-  .tweetFooter span,
-  .text {
-    font-size: 1rem;
-  }
-  .tweetBody{
-    font-size: .8rem;
-  }
-}
-
-@media only screen and (min-width:700px){
-  .userName,
-  .screenName,
-  .timeAgoTweet,
-  .tweetFooter span,
-  .text {
-    font-size: 1.1rem;
-  }
-  .tweetBody{
-    font-size: .9rem;
-  }
-}
-@media only screen and (min-width:900px){
-  .userName,
-  .screenName,
-  .timeAgoTweet,
-  .tweetFooter span,
-  .text {
-    font-size: 1.2rem;
-  }
-  .tweetBody{
-    font-size: 1rem;
->>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
   }
 }

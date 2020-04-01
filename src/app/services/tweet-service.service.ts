@@ -9,11 +9,8 @@ import { ITweet } from '../interfaces/tweetInterface';
 })
 export class TweetServiceService {
   private searchURL = 'http://localhost:8080/search?q=';
-<<<<<<< HEAD
   private searchId = 'http://localhost:8080/show?id=';
   
-=======
->>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
   constructor(private http: HttpClient) {}
 
   getTweets(tweetsToDisplay: number): Observable<any> {
@@ -28,7 +25,6 @@ export class TweetServiceService {
       );
   }
 
-<<<<<<< HEAD
   getSearchTweets (searchText : string): Observable<any> {
     return this.http.get<any>(this.searchURL+searchText)
     .pipe(
@@ -41,12 +37,6 @@ export class TweetServiceService {
     return this.http.get<any>(this.searchURL+searchId)
     .pipe(
       catchError(this.handleError<ITweet[]>('getIdTweet', []))
-=======
-  getSearchTweets (searchText : string,count :number): Observable<any> {
-    return this.http.get<any>(this.searchURL+searchText+'&count='+count)
-    .pipe(
-      catchError(this.handleError<ITweet[]>('getSearchTweets', []))
->>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
     );
   }
 
