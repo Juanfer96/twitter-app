@@ -28,7 +28,7 @@ export class TweetDetailComponent implements OnInit {
       });
   }*/
   getId(): void{
-    let id = this.route.snapshot.paramMap.get("id")
+    let id = this.route.snapshot.paramMap.get("id");
     this.tweetId = id;
     console.log(id);
     console.log(id.length);
