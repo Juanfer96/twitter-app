@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <li *ngFor="let tweet of Tweets">
   <a routerLink="/TweetDetail/{{ tweet.id_str}}">
     <img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
@@ -28,4 +29,41 @@
       <span> {{ tweet.favorited }} </span>
     </div>
   </a>
+=======
+<li *ngFor="let tweet of Tweets" routerLink="/TweetDetail/{{ tweet.id }}">
+
+  <img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
+
+  <div class="tweetHead">
+    <span class="userName">{{ tweet.user.name }}</span>
+    <span class="screenName"> @{{ tweet.user.screen_name }}</span>
+    <span class="timeAgoTweet"> - {{ tweet.created_at | dateAgo }}</span>
+  </div>
+
+  <div class="tweetBody">
+    <span class="text">{{ tweet.text }}</span>
+  </div>
+
+  <div *ngIf="tweet.entities.media">
+    <img
+      src="{{ tweet.entities.media[0].media_url }}"
+      width="400"
+      height="250"
+      alt="img not found"
+      class="imageContent"
+    />
+  </div>
+
+  <div class="tweetFooter">
+    <div class="retweet">
+      <fa-icon  [icon]="faRetweet" size="2x"></fa-icon>
+      <span > {{ tweet.retweet_count }} </span>
+    </div>
+    <div class="favourite">
+      <fa-icon  [icon]="faHeart" size="2x"></fa-icon>
+      <span > {{ tweet.favorite_count }} </span>
+    </div>
+  </div>
+  
+>>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
 </li>

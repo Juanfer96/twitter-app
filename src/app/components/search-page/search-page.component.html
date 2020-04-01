@@ -2,7 +2,23 @@
     <fa-icon [icon]="faSearch" size="2x" class="icon"></fa-icon>
     <input class="input" type="text" [(ngModel)]="searchText"  (keyup)="showSearchResults()" placeholder="Search..." />
 </section>
+<<<<<<< HEAD
 <ul>
+=======
+
+<div class="quickly-search">
+    <div class="quickly-search-item" (click)="setQuicklySearch('News')">
+        <span>News</span>
+    </div>
+    <div class="quickly-search-item" (click)="setQuicklySearch('Events')">
+        <span>Events</span>
+    </div>
+</div>
+
+
+<ul *ngIf="searching">
+    <h3 class="subtitle"> "{{searchText}}" search results  </h3>
+>>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
     <div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
         <app-tweet [Tweets]="tweets"></app-tweet>
         <div *ngIf="allTweetsLoaded">
@@ -12,6 +28,10 @@
         </div>
     </div>
 </ul>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f
 <div class="spinnerBottom">
     <ngx-spinner
         [fullScreen]="false"
@@ -21,4 +41,9 @@
         bdColor="inherit"
     ></ngx-spinner>
 </div>
+<<<<<<< HEAD
 <app-trend></app-trend>
+=======
+
+<app-trend (selectedTrend)="setSelectedTrend($event)"></app-trend>
+>>>>>>> 02c86123aaff702f9c1dad109e193fd616e2199f

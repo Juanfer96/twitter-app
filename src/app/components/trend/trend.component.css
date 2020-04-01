@@ -15,6 +15,12 @@
     height: 2.6em;
     position: relative;
 }
+.list-item:hover{
+  border-top: 1px solid #1dcaff;
+  border-bottom: 1px solid #1dcaff;
+  background-color: #f8fcfc;
+  cursor: pointer;
+}
 
 .id-number{ 
     font-size: .9em;
