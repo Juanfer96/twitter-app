@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: "home", component: HomePageComponent },
   { path: "search", component: SearchPageComponent },
   { path: "settings", component: SettingsPageComponent },
-  { path: "TweetDetail/:id", component: TweetDetailComponent }
+  { path: "TweetDetail/:id_str", component: TweetDetailComponent }
 ];
 
 @NgModule({

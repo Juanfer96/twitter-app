@@ -1,5 +1,5 @@
 <li *ngFor="let tweet of Tweets">
-  <a routerLink="/TweetDetail/{{ tweet.id_str}}">
+  <a routerLink="/TweetDetail/{{tweet.id_str}}">
     <img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
 
     <div class="tweetHead">
