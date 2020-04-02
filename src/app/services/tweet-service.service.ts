@@ -16,7 +16,11 @@ export class TweetServiceService {
 
   constructor(private http: HttpClient) {
     this.test = {
-      hideAccountsNotVerified: JSON.parse(localStorage.getItem("verified"))
+      hideAccountsNotVerified: false,
+      hidePeopleWhoDontfollow: false,
+      hideDefaultProfile: false,
+      hideTweetsWhitLinks: false,
+      TweetsTruncated: false
     };
   }
 
@@ -37,17 +41,17 @@ export class TweetServiceService {
     if (this.test.hideAccountsNotVerified && !tweet.user.verified) {
       return false;
     }
-    if (!tweet.user.following) {
-      return true;
+    if (this.test.hidePeopleWhoDontfollow && !tweet.user.following) {
+      return false;
     }
-    if (tweet.user.default_profile) {
-      return true;
+    if (this.test.hideDefaultProfile && tweet.user.default_profile) {
+      return false;
     }
-    if (tweet.entities.urls != 0) {
-      return true;
+    if (this.test.hideTweetsWhitLinks && tweet.entities.urls != 0) {
+      return false;
     }
-    if (tweet.truncated) {
-      return true;
+    if (this.test.TweetsTruncated && tweet.truncated) {
+      return false;
     }
     return true;
   }
@@ -57,6 +61,10 @@ export class TweetServiceService {
       this.filterTweetsByConfiguration(element)
     );
     return tweetFiltered;
+  }
+
+  getRealTimeConfiguration(): ITimeLineaConfiguration {
+    return this.test;
   }
 
   getSearchTweets(searchText: string, count: number): Observable<any> {
