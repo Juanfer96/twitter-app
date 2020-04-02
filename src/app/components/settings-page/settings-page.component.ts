@@ -14,6 +14,5 @@ export class SettingsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.timeLineSetting = this.ts.getRealTimeConfiguration();
-    console.log(this.timeLineSetting);
   }
 }
