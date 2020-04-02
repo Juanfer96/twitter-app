@@ -31,10 +31,11 @@ li:focus {
 
 .userVerified {
   background-color: #1dcaff;
-  padding: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
   color: #f8fcfc;
   border-radius: 50%;
-  margin-left: 0.2rem;
+  margin-left: 0.3rem;
   margin-right: 0.2rem;
 }
 
