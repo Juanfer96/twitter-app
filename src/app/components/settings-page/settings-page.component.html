@@ -1,20 +1,49 @@
 <header>
-  <h1>Silence notifications from...</h1>
+  <h1>Silence notifications from. . .</h1>
 </header>
 
-<p>People who have not verified the account</p>
-<input type="checkbox" [(ngModel)]="timeLineSetting.hideAccountsNotVerified" />
+<label class="container">
+  <span>People who have not verified the account</span>
+  <input
+    [(ngModel)]="timeLineSetting.hideAccountsNotVerified"
+    type="checkbox"
+    checked="checked"
+  />
+  <span class="checkmark"></span>
+</label>
 
-<p>People who do not follow</p>
-<input type="checkbox" [(ngModel)]="timeLineSetting.hidePeopleWhoDontfollow" />
+<label class="container">
+  <span>People who do not follow</span>
+  <input
+    [(ngModel)]="timeLineSetting.hidePeopleWhoDontfollow"
+    type="checkbox"
+    checked="checked"
+  />
+</label>
 
-<p>People who have default profile information</p>
-<input type="checkbox" [(ngModel)]="timeLineSetting.hideDefaultProfile" />
+<label class="container">
+  <span>People who have default profile information</span>
+  <input
+    [(ngModel)]="timeLineSetting.hideDefaultProfile"
+    type="checkbox"
+    checked="checked"
+  />
+</label>
 
-<p>Tweets that contains a link</p>
-<input type="checkbox" [(ngModel)]="timeLineSetting.hideTweetsWhitLinks" />
+<label class="container">
+  <span>Tweets that contains a link</span>
+  <input
+    [(ngModel)]="timeLineSetting.hideTweetsWhitLinks"
+    type="checkbox"
+    checked="checked"
+  />
+</label>
 
-<p>Tweets that has text truncated</p>
-<input type="checkbox" [(ngModel)]="timeLineSetting.TweetsTruncated" />
-
-<p>valor ={{ timeLineSetting.hideAccountsNotVerified }}</p>
+<label class="container">
+  <span>Tweets that has text truncated</span>
+  <input
+    [(ngModel)]="timeLineSetting.TweetsTruncated"
+    type="checkbox"
+    checked="checked"
+  />
+</label>
