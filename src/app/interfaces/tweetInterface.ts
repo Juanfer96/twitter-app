@@ -6,6 +6,7 @@ export interface ITweet {
     name: string;
     screen_name: string;
     profile_image_url: string;
+    verified: boolean;
   };
 
   text: string;

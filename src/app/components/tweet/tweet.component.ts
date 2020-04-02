@@ -3,7 +3,7 @@ import { ITweet } from "src/app/interfaces/tweetInterface";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faRetweet } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
-
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 @Component({
   selector: "app-tweet",
   templateUrl: "./tweet.component.html",
@@ -13,8 +13,8 @@ export class TweetComponent implements OnInit {
   @Input() Tweets: ITweet[];
   faHeart = faHeart;
   faRetweet = faRetweet;
-
   fasHeart = fasHeart;
+  faCheck = faCheck;
   tweet: any;
 
   clickfav(tweet: { favorited: boolean; favorite_count: number }) {
