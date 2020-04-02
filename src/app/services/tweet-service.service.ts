@@ -12,10 +12,10 @@ import { element } from "protractor";
 export class TweetServiceService {
   private searchURL = "http://localhost:8080/search?q=";
 
-  test: ITimeLineaConfiguration;
+  userConfiguration: ITimeLineaConfiguration;
 
   constructor(private http: HttpClient) {
-    this.test = {
+    this.userConfiguration = {
       hideAccountsNotVerified: false,
       hidePeopleWhoDontfollow: false,
       hideDefaultProfile: false,
@@ -38,19 +38,31 @@ export class TweetServiceService {
   }
 
   filterTweetsByConfiguration(tweet: any) {
-    if (this.test.hideAccountsNotVerified && !tweet.user.verified) {
+    if (
+      this.userConfiguration.hideAccountsNotVerified &&
+      !tweet.user.verified
+    ) {
       return false;
     }
-    if (this.test.hidePeopleWhoDontfollow && !tweet.user.following) {
+    if (
+      this.userConfiguration.hidePeopleWhoDontfollow &&
+      !tweet.user.following
+    ) {
       return false;
     }
-    if (this.test.hideDefaultProfile && tweet.user.default_profile) {
+    if (
+      this.userConfiguration.hideDefaultProfile &&
+      tweet.user.default_profile
+    ) {
       return false;
     }
-    if (this.test.hideTweetsWhitLinks && tweet.entities.urls != 0) {
+    if (
+      this.userConfiguration.hideTweetsWhitLinks &&
+      tweet.entities.urls != 0
+    ) {
       return false;
     }
-    if (this.test.TweetsTruncated && tweet.truncated) {
+    if (this.userConfiguration.TweetsTruncated && tweet.truncated) {
       return false;
     }
     return true;
@@ -64,7 +76,7 @@ export class TweetServiceService {
   }
 
   getRealTimeConfiguration(): ITimeLineaConfiguration {
-    return this.test;
+    return this.userConfiguration;
   }
 
   getSearchTweets(searchText: string, count: number): Observable<any> {
