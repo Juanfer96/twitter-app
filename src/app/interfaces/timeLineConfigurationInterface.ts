@@ -3,5 +3,5 @@ export interface ITimeLineaConfiguration {
   hidePeopleWhoDontfollow: boolean;
   hideDefaultProfile: boolean;
   hideTweetsWhitLinks: boolean;
-  TweetsTruncated: boolean;
+  hideTweetsTruncated: boolean;
 }

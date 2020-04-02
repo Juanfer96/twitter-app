@@ -21,7 +21,7 @@ export class TweetServiceService {
       hidePeopleWhoDontfollow: false,
       hideDefaultProfile: false,
       hideTweetsWhitLinks: false,
-      TweetsTruncated: false
+      hideTweetsTruncated: false
     };
   }
 
@@ -63,7 +63,7 @@ export class TweetServiceService {
     ) {
       return false;
     }
-    if (this.userConfiguration.TweetsTruncated && tweet.truncated) {
+    if (this.userConfiguration.hideTweetsTruncated && tweet.truncated) {
       return false;
     }
     return true;
