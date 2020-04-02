@@ -50,25 +50,35 @@ li:focus {
   margin-top: 0.8rem;
 }
 
-.retweet,
+.retweet {
+  color: rgb(190, 190, 190);
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
 .favourite {
   color: rgb(190, 190, 190);
   display: inline-block;
-  margin-right: 1em;
+  margin-right: 0.5em;
+  margin-left: 1.5em;
 }
 
 .retweet:hover fa-icon {
   color: rgb(25, 175, 25);
 }
+
 .retweet:hover span {
   color: rgb(25, 175, 25);
 }
+
 .retweeted {
   color: rgb(25, 175, 25);
 }
+
 .favourite:hover fa-icon {
   color: rgb(235, 47, 47);
 }
+
 .favourite:hover span {
   color: rgb(235, 47, 47);
 }
@@ -76,10 +86,12 @@ li:focus {
 .favourited {
   color: red;
 }
+
 .userName {
   font-weight: bold;
   color: rgb(46, 46, 46);
 }
+
 .screenName {
   color: rgb(185, 185, 185);
 }
