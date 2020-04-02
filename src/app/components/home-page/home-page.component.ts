@@ -23,6 +23,8 @@ export class HomePageComponent implements OnInit {
   getTweetsTimeLine(): void {
     this.ts.getTweets(this.initialTimeLineTweets).subscribe(Tweets => {
       this.Tweets = Tweets;
+      console.log(this.Tweets);
+      console.log(Tweets);
     });
   }
 

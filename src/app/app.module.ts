@@ -12,7 +12,7 @@ import { HomePageComponent } from "./components/home-page/home-page.component";
 import { SearchPageComponent } from "./components/search-page/search-page.component";
 import { SettingsPageComponent } from "./components/settings-page/settings-page.component";
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from "@angular/forms";
 import { DateAgoPipe } from "./pipes/date-ago.pipe";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
