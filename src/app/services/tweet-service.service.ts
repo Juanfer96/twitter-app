@@ -11,6 +11,7 @@ import { element } from "protractor";
 })
 export class TweetServiceService {
   private searchURL = "http://localhost:8080/search?q=";
+  private searchId = "http://localhost:8080/show?id_str=";
 
   userConfiguration: ITimeLineaConfiguration;
 
@@ -83,6 +84,12 @@ export class TweetServiceService {
     return this.http
       .get<any>(this.searchURL + searchText + "&count=" + count)
       .pipe(catchError(this.handleError<ITweet[]>("getSearchTweets", [])));
+  }
+
+  getIdTweet(searchId: string): Observable<any> {
+    return this.http
+      .get<any>(this.searchURL + searchId)
+      .pipe(catchError(this.handleError<ITweet[]>("getIdTweet", [])));
   }
 
   private handleError<T>(operation = "operation", result?: T) {
