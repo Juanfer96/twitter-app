@@ -39,12 +39,17 @@
   margin-left: 1rem;
   vertical-align: 0.7rem;
 }
+.tweetHead span{
+  font-size: 1.3em;
+}
 
 .tweetBody {
   margin-left: 1rem;
   margin-right: auto;
-  font-size: .9em;
   padding: 2em 0 2em 0;
+}
+.tweetBody span{
+  font-size: 1.2em;
 }
 
 .imageContent {
@@ -83,10 +88,9 @@
   display: inline-block;
   width: 70%;
   position: absolute;
-  padding: 1em 0 0 1em;
+  padding: 1.5em 0 0 1em;
 }
 .userName span{
-  font-size: 1.3em;
   font-weight: bold;
   color:rgb(46, 46, 46);
   
@@ -96,71 +100,82 @@
   width: 70%;
   position: absolute;
   padding-left: 1em;
-  margin-top: 35px;
+  margin-top: 40px;
 }
 .screenName span{
   color: rgb(185, 185, 185);
-  font-size: 1.2em;
 }
 
+
+.timeAgoTweet{
+  margin-left: 1em;
+ 
+}
+.timeAgoTweet span{
+  font-size: 1.1em;
+  color: rgb(138, 138, 138);
+  font-weight: 500;
+}
 @media only screen and (min-width:500px){
-  .userName,
-  .screenName,
-  .timeAgoTweet,
-  .tweetFooter span,
-  .text {
-    font-size: 1rem;
+  .tweetHead span,
+  .tweetFooter span{
+    font-size: 1.4em;
   }
   .tweetBody{
-    font-size: .8rem;
+    font-size: 1.3em;
+  }
+  .timeAgoTweet span{
+    font-size: 1.1em;
   }
   .profileImage img{
     width: 60px;
     height: 60px;
   }
   .screenName{
-    margin-top: 45px;
+    margin-top: 40px;
   }
 
 }
 
 @media only screen and (min-width:700px){
-  .userName,
-  .screenName,
-  .timeAgoTweet,
-  .tweetFooter span,
-  .text {
-    font-size: 1.1rem;
+  .userName span,
+  .screenName span,
+  .tweetFooter span{
+    font-size: 1.5em;
   }
   .tweetBody{
-    font-size: .9rem;
+    font-size: 1.4em;
+  }
+  .timeAgoTweet span{
+    font-size: 1.2em;
   }
   .profileImage img{
     width: 72px;
     height: 72px;
   }
   .screenName{
-    margin-top: 50px;
+    margin-top: 43px;
   }
 
 }
 @media only screen and (min-width:900px){
-  .userName,
-  .screenName,
-  .timeAgoTweet,
-  .tweetFooter span,
-  .text {
-    font-size: 1.2rem;
+  .userName span,
+  .screenName span,
+  .tweetFooter span{
+    font-size: 1.6em;
   }
   .tweetBody{
-    font-size: 1rem;
+    font-size: 1.5em;
+  }
+  .timeAgoTweet span{
+    font-size: 1.3em;
   }
   .profileImage img{
     width: 84px;
     height: 84px;
   }
   .screenName{
-    margin-top: 55px;
+    margin-top: 48px;
   }
   
 }
