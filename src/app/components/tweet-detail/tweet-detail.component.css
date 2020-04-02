@@ -60,16 +60,25 @@
 }
 
 .tweetFooter {
-  margin-left: 3.7rem;
+  margin-left: 1.8em;
   margin-bottom: 0.5rem;
   margin-top: 0.8rem;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  border-color: rgb(230, 230, 230);
+  padding: 1em 0 1em 0;
 }
-
 .retweet,
 .favourite{
-  color: rgb(190, 190, 190);
   display: inline-block;
-  margin-right: 1em;
+  margin-right: 1.5em;
+}
+
+.retweet span,
+.favourite span{
+  color: rgb(138, 138, 138);
+  font-size: 1em;
+  font-weight: 400;
 }
 .retweet:hover fa-icon{
   color: rgb(25, 175, 25);
@@ -109,7 +118,6 @@
 
 .timeAgoTweet{
   margin-left: 1em;
- 
 }
 .timeAgoTweet span{
   font-size: 1.1em;
