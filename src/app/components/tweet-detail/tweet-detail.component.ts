@@ -4,7 +4,10 @@ import { ITweet } from "./../../interfaces/tweetInterface";
 import { TweetServiceService } from "src/app/services/tweet-service.service";
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common';
-
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faRetweet } from '@fortawesome/free-solid-svg-icons';
+import { faComment } from '@fortawesome/free-regular-svg-icons';
+import { faCircle } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: "app-tweet-detail",
@@ -15,6 +18,10 @@ export class TweetDetailComponent implements OnInit {
   tweetId: string;
   tweet : ITweet;
   faArrowLeft = faArrowLeft;
+  faHeart = faHeart;
+  faRetweet = faRetweet;
+  faComment =faComment;
+  faCircle = faCircle;
 
   constructor(
     public ts: TweetServiceService,

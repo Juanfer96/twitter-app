@@ -35,7 +35,21 @@
       <span > {{ tweet.favorite_count }} Like</span>
     </div>
   </div>
+
+  <div class="tweetIcons">
+    <div class="icon">
+      <fa-icon class="iconHeart"   [icon]="faHeart"  size="3x"></fa-icon>
+    </div>
+    <div class="icon">
+      <fa-icon  class="iconRe" [icon]="faRetweet" size="3x"></fa-icon>
+    </div>
+    <div class="icon">
+        <fa-icon class="iconCo" [icon]="faComment" size="3x"></fa-icon>
+    </div>
+  </div>
+
 </section>
+
 <app-footer></app-footer>
      
 

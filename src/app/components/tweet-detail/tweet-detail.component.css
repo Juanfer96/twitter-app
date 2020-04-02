@@ -60,7 +60,6 @@
 }
 
 .tweetFooter {
-  margin-left: 1.8em;
   margin-bottom: 0.5rem;
   margin-top: 0.8rem;
   border-top: solid 1px;
@@ -71,14 +70,16 @@
 .retweet,
 .favourite{
   display: inline-block;
-  margin-right: 1.5em;
+ 
 }
 
 .retweet span,
 .favourite span{
   color: rgb(138, 138, 138);
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: 400;
+
+  margin-left: 1.2em;
 }
 .retweet:hover fa-icon{
   color: rgb(25, 175, 25);
@@ -123,6 +124,35 @@
   font-size: 1.1em;
   color: rgb(138, 138, 138);
   font-weight: 500;
+}
+
+.tweetIcons{
+  height: 50px;
+  margin-top:1.2em;
+}
+.icon{
+  width: 33%;
+  float:left;
+  text-align: center;
+}
+
+.iconHeart {
+  color: rgb(134, 134, 134);
+}
+.iconHeart:hover {
+  color:rgb(235, 47, 47);
+}
+.iconRe {
+  color: rgb(134, 134, 134);
+}
+.iconRe:hover {
+  color:rgb(25, 175, 25);
+}
+.iconCo {
+  color: rgb(134, 134, 134);
+}
+.iconCo:hover {
+  color:#1dcaff;
 }
 @media only screen and (min-width:500px){
   .tweetHead span,
