@@ -8,6 +8,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faRetweet } from '@fortawesome/free-solid-svg-icons';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import { faCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-tweet-detail",
@@ -22,6 +23,7 @@ export class TweetDetailComponent implements OnInit {
   faRetweet = faRetweet;
   faComment =faComment;
   faCircle = faCircle;
+  faCheck =faCheck;
 
   constructor(
     public ts: TweetServiceService,

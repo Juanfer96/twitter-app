@@ -6,7 +6,12 @@
 
   <div class="tweetHead">
     <div class="profileImage"><img src="{{ tweet.user.profile_image_url }}" alt="ProfileImage"  /></div>
-    <div class="userName"><span>{{ tweet.user.name }}</span></div>
+    <div class="userName">
+      <span>{{ tweet.user.name }}</span>
+      <span *ngIf="tweet.user.verified">
+          <fa-icon [icon]="faCheck" size="1x" class="userVerified"></fa-icon>
+      </span>
+    </div>
     <div class="screenName"><span> @{{ tweet.user.screen_name }}</span></div>
   </div>
 
