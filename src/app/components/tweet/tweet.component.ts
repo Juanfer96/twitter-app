@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from "@angular/core";
 import { ITweet } from "src/app/interfaces/tweetInterface";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faRetweet } from "@fortawesome/free-solid-svg-icons";
-
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 
 @Component({

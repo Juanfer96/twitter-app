@@ -63,6 +63,9 @@ li:focus {
 .retweet:hover span {
   color: rgb(25, 175, 25);
 }
+.retweeted {
+  color: rgb(25, 175, 25);
+}
 .favourite:hover fa-icon {
   color: rgb(235, 47, 47);
 }

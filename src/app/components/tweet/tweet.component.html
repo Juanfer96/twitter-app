@@ -24,10 +24,11 @@
   <div class="tweetFooter">
     <div class="retweet">
       <fa-icon [icon]="faRetweet" size="2x"></fa-icon>
+      <fa-icon class="retweeted" [icon]="faRetweet" size="2x"></fa-icon>
       <span> {{ tweet.retweet_count }} </span>
     </div>
 
-    <div class="favourite" (click)="clickfav(tweet)">
+    <div class="favourite" (click)="clickfav(tweet); $event.stopPropagation()">
       <span *ngIf="!tweet.favorited; else favorited">
         <fa-icon [icon]="faHeart" size="2x"></fa-icon>
       </span>
