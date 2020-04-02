@@ -105,6 +105,7 @@
   color:rgb(46, 46, 46);
 }
 .userVerified {
+  font-size: inherit;
   background-color: #1dcaff;
   padding-left: 2px;
   padding-right: 2px;

@@ -32,7 +32,6 @@ export class TweetServiceService {
         map(data => (data = this.finalFilter(data))),
 
         catchError(err => {
-          console.log(err);
           return err;
         })
       );
@@ -94,7 +93,6 @@ export class TweetServiceService {
 
   private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
-      console.error(error);
       return of(result as T);
     };
   }

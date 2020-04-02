@@ -4,7 +4,7 @@
   <div class="tweetHead">
     <span class="userName">{{ tweet.user.name }}</span>
     <span *ngIf="tweet.user.verified">
-      <fa-icon [icon]="faCheck" size="1x" class="userVerified"></fa-icon>
+      <fa-icon [icon]="faCheck" size="xs" class="userVerified"></fa-icon>
     </span>
     <span class="screenName"> @{{ tweet.user.screen_name }}</span>
     <span class="timeAgoTweet"> - {{ tweet.created_at | dateAgo }}</span>
