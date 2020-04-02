@@ -1,9 +1,11 @@
 <li *ngFor="let tweet of Tweets" routerLink="/TweetDetail/{{ tweet.id_str }}">
-
   <img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
 
   <div class="tweetHead">
     <span class="userName">{{ tweet.user.name }}</span>
+    <span *ngIf="tweet.user.verified">
+      <fa-icon [icon]="faCheck" size="1x" class="userVerified"></fa-icon>
+    </span>
     <span class="screenName"> @{{ tweet.user.screen_name }}</span>
     <span class="timeAgoTweet"> - {{ tweet.created_at | dateAgo }}</span>
   </div>
@@ -23,14 +25,29 @@
   </div>
 
   <div class="tweetFooter">
-    <div class="retweet">
-      <fa-icon  [icon]="faRetweet" size="2x"></fa-icon>
-      <span > {{ tweet.retweet_count }} </span>
+    <div
+      class="retweet"
+      (click)="clickReTweet(tweet); $event.stopPropagation()"
+    >
+      <span *ngIf="!tweet.retweeted; else retweetedDone">
+        <fa-icon [icon]="faRetweet" size="2x"></fa-icon>
+      </span>
+
+      <ng-template #retweetedDone>
+        <fa-icon class="retweeted" [icon]="faRetweet" size="2x"></fa-icon>
+      </ng-template>
     </div>
-    <div class="favourite">
-      <fa-icon  [icon]="faHeart" size="2x"></fa-icon>
-      <span > {{ tweet.favorite_count }} </span>
+    <span> {{ tweet.retweet_count }} </span>
+
+    <div class="favourite" (click)="clickfav(tweet); $event.stopPropagation()">
+      <span *ngIf="!tweet.favorited; else favorited">
+        <fa-icon [icon]="faHeart" size="2x"></fa-icon>
+      </span>
+
+      <ng-template #favorited>
+        <fa-icon [icon]="fasHeart" size="2x" class="favourited"></fa-icon>
+      </ng-template>
     </div>
+    <span> {{ tweet.favorite_count }} </span>
   </div>
-  
 </li>

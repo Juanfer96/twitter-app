@@ -20,7 +20,7 @@ export class TweetDetailComponent implements OnInit {
 
   public tweetId: string;
   public Tweet: ITweet;
-  tweet : ITweet;
+  tweet: ITweet;
 
   getId() {
     return this.route.snapshot.paramMap.get("id_str");
@@ -60,7 +60,6 @@ export class TweetDetailComponent implements OnInit {
     });
     console.log(this.Tweet);
 
-    
-    this.tweet=this.getprueba();
+    //this.tweet=this.getprueba();
   }
 }
