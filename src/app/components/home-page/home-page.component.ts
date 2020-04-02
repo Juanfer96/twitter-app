@@ -23,8 +23,6 @@ export class HomePageComponent implements OnInit {
   getTweetsTimeLine(): void {
     this.ts.getTweets(this.initialTimeLineTweets).subscribe(Tweets => {
       this.Tweets = Tweets;
-      console.log(this.Tweets);
-      console.log(Tweets);
     });
   }
 
@@ -33,7 +31,6 @@ export class HomePageComponent implements OnInit {
     if (this.cont >= 200) {
       //when all the maximum number of tweets are loaded,a message is displayed in the html of the component
       this.allTweetsLoaded = true;
-      console.log(this.allTweetsLoaded);
     }
 
     if (this.notscrolly) {
