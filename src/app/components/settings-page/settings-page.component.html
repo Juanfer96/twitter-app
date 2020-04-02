@@ -1,1 +1,49 @@
-<p>settings-page works!</p>
+<header>
+  <h1>Silence notifications from. . .</h1>
+</header>
+
+<label class="container">
+  <span>People who have not verified the account</span>
+  <input
+    [(ngModel)]="timeLineSetting.hideAccountsNotVerified"
+    type="checkbox"
+    checked="checked"
+  />
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">
+  <span>People who do not follow</span>
+  <input
+    [(ngModel)]="timeLineSetting.hidePeopleWhoDontfollow"
+    type="checkbox"
+    checked="checked"
+  />
+</label>
+
+<label class="container">
+  <span>People who have default profile information</span>
+  <input
+    [(ngModel)]="timeLineSetting.hideDefaultProfile"
+    type="checkbox"
+    checked="checked"
+  />
+</label>
+
+<label class="container">
+  <span>Tweets that contains a link</span>
+  <input
+    [(ngModel)]="timeLineSetting.hideTweetsWhitLinks"
+    type="checkbox"
+    checked="checked"
+  />
+</label>
+
+<label class="container">
+  <span>Tweets that has text truncated</span>
+  <input
+    [(ngModel)]="timeLineSetting.hideTweetsTruncated"
+    type="checkbox"
+    checked="checked"
+  />
+</label>
