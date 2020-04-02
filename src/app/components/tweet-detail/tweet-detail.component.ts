@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ITweet } from "./../../interfaces/tweetInterface";
 import { TweetServiceService } from "src/app/services/tweet-service.service";
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -10,13 +12,15 @@ import { TweetServiceService } from "src/app/services/tweet-service.service";
   styleUrls: ["./tweet-detail.component.css"]
 })
 export class TweetDetailComponent implements OnInit {
+  tweetId: string;
+  tweet : ITweet;
+  faArrowLeft = faArrowLeft;
+
   constructor(
     public ts: TweetServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location :Location,
   ) {}
-
-  public tweetId: string;
-  tweet : ITweet;
 
   getId() {
     return this.route.snapshot.paramMap.get("id_str");
@@ -24,10 +28,13 @@ export class TweetDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.tweetId = this.getId();
-
     this.ts.getIdTweet(this.tweetId)
     .subscribe(data => {
       this.tweet = data;
     });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

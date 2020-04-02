@@ -4,19 +4,39 @@
   padding: 0;
   font-size: 0.78rem;
 }
+.tweetGoBack{
+  padding: 2em;
+  border-bottom:1px solid  rgba(199, 199, 199, 0.794);
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
+  
+}
+.tweetGoBack fa-icon{
+  margin-right: 2em;
+  color:#1dcaff ;
+}
+.tweetGoBack span{
+  font-size: 2em;
+  color: rgb(46, 46, 46);
+  font-weight: 500;
+}
+.profileImage{
+  display: inline-block;
 
-.profileImage {
+}
+.profileImage img{
   max-width: 100%;
   border-radius: 50%;
   margin-top: 0.625rem;
-  display: inline-block;
   margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  width: 48px;
+  height: 48px;
 }
+
 
 .tweetHead {
   padding-top: 0;
   margin-top: 0;
-  display: inline-block;
   margin-left: 1rem;
   vertical-align: 0.7rem;
 }
@@ -54,11 +74,27 @@
 
 
 .userName {
+  display: inline-block;
+  width: 70%;
+  position: absolute;
+  padding: 1em 0 0 1em;
+}
+.userName span{
+  font-size: 1.3em;
   font-weight: bold;
-  color:rgb(46, 46, 46)
+  color:rgb(46, 46, 46);
+  
 }
 .screenName {
+  display: inline-block;
+  width: 70%;
+  position: absolute;
+  padding-left: 1em;
+  margin-top: 35px;
+}
+.screenName span{
   color: rgb(185, 185, 185);
+  font-size: 1.2em;
 }
 
 .timeAgoTweet {
@@ -69,7 +105,7 @@
 .imageContent {
   margin-top: 0.3rem;
   margin-left: 3.7rem;
-  max-width: 70%;
+  max-width: 75%;
 }
 
 @media only screen and (min-width:500px){
@@ -83,7 +119,14 @@
   .tweetBody{
     font-size: .8rem;
   }
-  
+  .profileImage img{
+    width: 60px;
+    height: 60px;
+  }
+  .screenName{
+    margin-top: 45px;
+  }
+
 }
 
 @media only screen and (min-width:700px){
@@ -97,6 +140,14 @@
   .tweetBody{
     font-size: .9rem;
   }
+  .profileImage img{
+    width: 72px;
+    height: 72px;
+  }
+  .screenName{
+    margin-top: 50px;
+  }
+
 }
 @media only screen and (min-width:900px){
   .userName,
@@ -109,6 +160,12 @@
   .tweetBody{
     font-size: 1rem;
   }
-  
+  .profileImage img{
+    width: 84px;
+    height: 84px;
+  }
+  .screenName{
+    margin-top: 55px;
+  }
   
 }

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <section class="search">
     <fa-icon [icon]="faSearch" size="2x" class="icon"></fa-icon>
     <input class="input" type="text" [(ngModel)]="searchText"  (keyup)="showSearchResults()" placeholder="Search..." />
@@ -36,3 +37,4 @@
 </div>
 
 <app-trend (selectedTrend)="setSelectedTrend($event)"></app-trend>
+<app-footer></app-footer>

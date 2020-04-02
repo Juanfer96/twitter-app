@@ -19,6 +19,7 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     HomePageComponent,
     SearchPageComponent,
     SettingsPageComponent,
-    DateAgoPipe
+    DateAgoPipe,
   ],
   imports: [
     BrowserModule,
