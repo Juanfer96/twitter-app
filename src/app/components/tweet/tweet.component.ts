@@ -26,6 +26,17 @@ export class TweetComponent implements OnInit {
       tweet.favorited = true;
     }
   }
+
+  clickReTweet(tweet: { retweeted: boolean; retweet_count: number }) {
+    if (tweet.retweeted) {
+      tweet.retweeted = false;
+      tweet.retweet_count -= 1;
+    } else {
+      tweet.retweet_count += 1;
+      tweet.retweeted = true;
+    }
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
