@@ -30,15 +30,18 @@ export class SearchPageComponent implements OnInit {
 
   showSearchResults(): void {
     //To not start an empty search with 3 blanks
-    if (this.searchText === " ") {
+    if (this.searchText === "") {
       this.searchText = "";
+      this.spinner.hide();
     }
     //Only start searching with 3 characters
     if (this.searchText.length >= 3) {
       this.getTweets(this.initialTimeLineTweets);
       this.searching = true;
+      this.spinner.hide();
     } else {
       this.searching = false;
+      this.spinner.show();
     }
   }
 
@@ -49,13 +52,13 @@ export class SearchPageComponent implements OnInit {
   }
 
   onScroll() {
-    this.spinner.show(); //shows the spinner while the tweets are loading
     if (this.cont >= 100) {
       //when all the maximum number of tweets are loaded,a message is displayed in the html of the component
       this.allTweetsLoaded = true;
     }
 
     if (this.notscrolly) {
+      this.spinner.show(); //shows the spinner while the tweets are loading
       this.notscrolly = false;
       this.cont = this.initialTimeLineTweets + this.index;
       this.index = this.index + 10;
@@ -66,7 +69,9 @@ export class SearchPageComponent implements OnInit {
   addNewTeetsTimeLine(count: number) {
     this.getTweets(count);
     this.notscrolly = true;
-    this.spinner.hide(); //hides the spinner when the time line is loaded
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000); //hides the spinner when the time line is loaded, the setTimeout is used because the search was too fast,soo with that we can simulate more search time
   }
 
   setSelectedTrend(trendName: string) {
