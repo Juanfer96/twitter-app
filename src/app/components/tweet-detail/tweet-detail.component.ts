@@ -9,6 +9,7 @@ import { faRetweet } from '@fortawesome/free-solid-svg-icons';
 import { faComment } from '@fortawesome/free-regular-svg-icons';
 import { faCircle } from '@fortawesome/free-regular-svg-icons';
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-tweet-detail",
@@ -24,6 +25,7 @@ export class TweetDetailComponent implements OnInit {
   faComment =faComment;
   faCircle = faCircle;
   faCheck =faCheck;
+  fasHeart=fasHeart;
 
   constructor(
     public ts: TweetServiceService,
@@ -45,5 +47,25 @@ export class TweetDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  clickReTweet() {
+    if (this.tweet.retweeted) {
+      this.tweet.retweeted = false;
+      this.tweet.retweet_count -= 1;
+    } else {
+      this.tweet.retweet_count += 1;
+      this.tweet.retweeted = true;
+    }
+  }
+
+  clickfav() {
+    if (this.tweet.favorited) {
+      this.tweet.favorited = false;
+      this.tweet.favorite_count -= 1;
+    } else {
+      this.tweet.favorite_count += 1;
+      this.tweet.favorited = true;
+    }
   }
 }

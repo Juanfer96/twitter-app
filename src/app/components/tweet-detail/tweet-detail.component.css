@@ -151,6 +151,7 @@
 .iconHeart:hover {
   color:rgb(235, 47, 47);
 }
+
 .iconRe {
   color: rgb(134, 134, 134);
 }
@@ -163,6 +164,13 @@
 .iconCo:hover {
   color:#1dcaff;
 }
+.favourited{
+  color: rgb(235, 47, 47);
+}
+.retweeted{
+  color:rgb(25, 175, 25);
+}
+
 @media only screen and (min-width:500px){
   .tweetHead span,
   .tweetFooter span{

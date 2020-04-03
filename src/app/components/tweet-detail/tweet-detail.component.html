@@ -43,10 +43,27 @@
 
   <div class="tweetIcons">
     <div class="icon">
-      <fa-icon class="iconHeart"   [icon]="faHeart"  size="3x"></fa-icon>
+     <span *ngIf="!tweet.favorited; else favorited">
+       <fa-icon class="iconHeart"   [icon]="faHeart"  size="3x" 
+      (click)="clickfav(); $event.stopPropagation()">
+     </fa-icon></span>
+
+    <ng-template #favorited>
+        <fa-icon [icon]="fasHeart" size="3x" class="favourited"></fa-icon>
+    </ng-template>
+
     </div>
     <div class="icon">
-      <fa-icon  class="iconRe" [icon]="faRetweet" size="3x"></fa-icon>
+      <span *ngIf="!tweet.retweeted; else retweetedDone">
+      <fa-icon  class="iconRe" [icon]="faRetweet" size="3x" 
+      (click)="clickReTweet(); $event.stopPropagation()">
+      </fa-icon>
+     </span>
+
+      <ng-template #retweetedDone>
+          <fa-icon class="retweeted" [icon]="faRetweet" size="3x"></fa-icon>
+      </ng-template>   
+      
     </div>
     <div class="icon">
         <fa-icon class="iconCo" [icon]="faComment" size="3x"></fa-icon>
