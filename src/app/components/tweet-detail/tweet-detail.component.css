@@ -1,29 +1,28 @@
-*{
+* {
   color: rgb(83, 83, 83);
   margin: 0 auto;
   padding: 0;
   font-size: 0.78rem;
 }
-.tweetGoBack{
+.tweetGoBack {
   padding: 2em;
-  border-bottom:1px solid  rgba(199, 199, 199, 0.794);
+  border-bottom: 1px solid rgba(199, 199, 199, 0.794);
   box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.2);
-  
 }
-.tweetGoBack fa-icon{
+.tweetGoBack fa-icon {
   margin-right: 2em;
-  color:#1dcaff ;
+  color: #1dcaff;
 }
-.tweetGoBack span{
+.tweetGoBack span {
   font-size: 2em;
   color: rgb(46, 46, 46);
   font-weight: 500;
 }
 
-.profileImage{
+.profileImage {
   display: inline-block;
 }
-.profileImage img{
+.profileImage img {
   max-width: 100%;
   border-radius: 50%;
   margin-top: 0.625rem;
@@ -33,13 +32,12 @@
   height: 48px;
 }
 
-
 .tweetHead {
   margin-top: 2em;
   margin-left: 1rem;
   vertical-align: 0.7rem;
 }
-.tweetHead span{
+.tweetHead span {
   font-size: 1.3em;
 }
 
@@ -48,7 +46,7 @@
   margin-right: auto;
   padding: 2em 0 2em 0;
 }
-.tweetBody span{
+.tweetBody span {
   font-size: 1.2em;
 }
 
@@ -56,7 +54,6 @@
   margin-top: 0.3rem;
   margin-left: 1rem;
   max-width: 90%;
-
 }
 
 .tweetFooter {
@@ -68,29 +65,28 @@
   padding: 1em 0 1em 0;
 }
 .retweet,
-.favourite{
+.favourite {
   display: inline-block;
- 
 }
 
 .retweet span,
-.favourite span{
+.favourite span {
   color: rgb(138, 138, 138);
   font-size: 1.3em;
   font-weight: 400;
 
   margin-left: 1.2em;
 }
-.retweet:hover fa-icon{
+.retweet:hover fa-icon {
   color: rgb(25, 175, 25);
 }
-.retweet:hover span{
+.retweet:hover span {
   color: rgb(25, 175, 25);
 }
-.favourite:hover fa-icon{
+.favourite:hover fa-icon {
   color: rgb(235, 47, 47);
 }
-.favourite:hover span{
+.favourite:hover span {
   color: rgb(235, 47, 47);
 }
 
@@ -100,9 +96,9 @@
   position: absolute;
   padding: 1.5em 0 0 1em;
 }
-.userName span{
+.userName span {
   font-weight: bold;
-  color:rgb(46, 46, 46);
+  color: rgb(46, 46, 46);
 }
 .userVerified {
   font-size: inherit;
@@ -121,116 +117,116 @@
   padding-left: 1em;
   margin-top: 40px;
 }
-.screenName span{
+.screenName span {
   color: rgb(185, 185, 185);
 }
 
-
-.timeAgoTweet{
+.timeAgoTweet {
   margin-left: 1em;
 }
-.timeAgoTweet span{
+.timeAgoTweet span {
   font-size: 1.1em;
   color: rgb(138, 138, 138);
   font-weight: 500;
 }
 
-.tweetIcons{
+.tweetIcons {
   height: 50px;
-  margin-top:1.2em;
+  margin-top: 1.2em;
 }
-.icon{
+.icon {
   width: 33%;
-  float:left;
+  float: left;
   text-align: center;
+}
+.iconZone {
+  margin: 0;
+  padding: 0;
 }
 
 .iconHeart {
   color: rgb(134, 134, 134);
 }
 .iconHeart:hover {
-  color:rgb(235, 47, 47);
+  color: rgb(235, 47, 47);
 }
 
 .iconRe {
   color: rgb(134, 134, 134);
 }
 .iconRe:hover {
-  color:rgb(25, 175, 25);
+  color: rgb(25, 175, 25);
 }
 .iconCo {
   color: rgb(134, 134, 134);
 }
 .iconCo:hover {
-  color:#1dcaff;
+  color: #1dcaff;
 }
-.favourited{
+.favourited {
   color: rgb(235, 47, 47);
 }
-.retweeted{
-  color:rgb(25, 175, 25);
+.retweeted {
+  color: rgb(25, 175, 25);
 }
 
-@media only screen and (min-width:500px){
+@media only screen and (min-width: 500px) {
   .tweetHead span,
-  .tweetFooter span{
+  .tweetFooter span {
     font-size: 1.4em;
   }
-  .tweetBody{
+  .tweetBody {
     font-size: 1.3em;
   }
-  .timeAgoTweet span{
+  .timeAgoTweet span {
     font-size: 1.1em;
   }
-  .profileImage img{
+  .profileImage img {
     width: 60px;
     height: 60px;
   }
-  .screenName{
+  .screenName {
     margin-top: 40px;
   }
-
 }
 
-@media only screen and (min-width:700px){
+@media only screen and (min-width: 700px) {
   .userName span,
   .screenName span,
-  .tweetFooter span{
+  .tweetFooter span {
     font-size: 1.5em;
   }
-  .tweetBody{
+  .tweetBody {
     font-size: 1.4em;
   }
-  .timeAgoTweet span{
+  .timeAgoTweet span {
     font-size: 1.2em;
   }
-  .profileImage img{
+  .profileImage img {
     width: 72px;
     height: 72px;
   }
-  .screenName{
+  .screenName {
     margin-top: 43px;
   }
-
 }
-@media only screen and (min-width:900px){
+@media only screen and (min-width: 900px) {
   .userName span,
   .screenName span,
-  .tweetFooter span{
+  .tweetFooter span {
     font-size: 1.6em;
   }
-  .tweetBody{
+  .tweetBody {
     font-size: 1.5em;
   }
-  .timeAgoTweet span{
+  .timeAgoTweet span {
     font-size: 1.3em;
   }
-  .profileImage img{
+  .profileImage img {
     width: 84px;
     height: 84px;
   }
-  .screenName{
+  .screenName {
     margin-top: 48px;
   }
-  
 }
