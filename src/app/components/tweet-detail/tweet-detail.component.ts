@@ -2,12 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ITweet } from "./../../interfaces/tweetInterface";
 import { TweetServiceService } from "src/app/services/tweet-service.service";
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { Location } from '@angular/common';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faRetweet } from '@fortawesome/free-solid-svg-icons';
-import { faComment } from '@fortawesome/free-regular-svg-icons';
-import { faCircle } from '@fortawesome/free-regular-svg-icons';
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Location } from "@angular/common";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faRetweet } from "@fortawesome/free-solid-svg-icons";
+import { faComment } from "@fortawesome/free-regular-svg-icons";
+import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 
@@ -18,19 +18,19 @@ import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 })
 export class TweetDetailComponent implements OnInit {
   tweetId: string;
-  tweet : ITweet;
+  tweet: ITweet;
   faArrowLeft = faArrowLeft;
   faHeart = faHeart;
   faRetweet = faRetweet;
-  faComment =faComment;
+  faComment = faComment;
   faCircle = faCircle;
-  faCheck =faCheck;
-  fasHeart=fasHeart;
+  faCheck = faCheck;
+  fasHeart = fasHeart;
 
   constructor(
     public ts: TweetServiceService,
     private route: ActivatedRoute,
-    private location :Location,
+    private location: Location
   ) {}
 
   getId() {
@@ -39,8 +39,7 @@ export class TweetDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.tweetId = this.getId();
-    this.ts.getIdTweet(this.tweetId)
-    .subscribe(data => {
+    this.ts.getIdTweet(this.tweetId).subscribe(data => {
       this.tweet = data;
     });
   }
