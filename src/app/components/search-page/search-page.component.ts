@@ -71,7 +71,7 @@ export class SearchPageComponent implements OnInit {
     this.notscrolly = true;
     setTimeout(() => {
       this.spinner.hide();
-    }, 3000); //hides the spinner when the time line is loaded, the setTimeout is used because the search was too fast,soo with that we can simulate more search time
+    }, 2000); //hides the spinner when the time line is loaded, the setTimeout is used because the search was too fast,soo with that we can simulate more search time
   }
 
   setSelectedTrend(trendName: string) {
