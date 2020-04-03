@@ -10,6 +10,7 @@ import { element } from "protractor";
   providedIn: "root"
 })
 export class TweetServiceService {
+  private timeLineUrl = "http://localhost:8080/timeline?count=";
   private searchURL = "http://localhost:8080/search?q=";
   private idURL = "http://localhost:8080/show?id=";
 
@@ -26,15 +27,13 @@ export class TweetServiceService {
   }
 
   getTweets(tweetsToDisplay: number): Observable<any> {
-    return this.http
-      .get<any>(`http://localhost:8080/timeline?count=${tweetsToDisplay}`)
-      .pipe(
-        map(data => (data = this.finalFilter(data))),
+    return this.http.get<any>(`${this.timeLineUrl}${tweetsToDisplay}`).pipe(
+      map(data => (data = this.finalFilter(data))),
 
-        catchError(err => {
-          return err;
-        })
-      );
+      catchError(err => {
+        return err;
+      })
+    );
   }
 
   filterTweetsByConfiguration(tweet: any) {

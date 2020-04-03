@@ -64,13 +64,13 @@ li:focus {
   color: rgb(190, 190, 190);
   display: inline-block;
   margin-right: 0.5em;
+  margin-left: 1.5em;
 }
 
 .favourite {
   color: rgb(190, 190, 190);
   display: inline-block;
   margin-right: 0.5em;
-  margin-left: 1.5em;
 }
 
 .retweet:hover fa-icon {

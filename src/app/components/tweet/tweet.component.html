@@ -25,6 +25,17 @@
   </div>
 
   <div class="tweetFooter">
+    <div class="favourite" (click)="clickfav(tweet); $event.stopPropagation()">
+      <span *ngIf="!tweet.favorited; else favorited">
+        <fa-icon [icon]="faHeart" size="2x"></fa-icon>
+      </span>
+
+      <ng-template #favorited>
+        <fa-icon [icon]="fasHeart" size="2x" class="favourited"></fa-icon>
+      </ng-template>
+    </div>
+    <span> {{ tweet.favorite_count }} </span>
+
     <div
       class="retweet"
       (click)="clickReTweet(tweet); $event.stopPropagation()"
@@ -38,16 +49,5 @@
       </ng-template>
     </div>
     <span> {{ tweet.retweet_count }} </span>
-
-    <div class="favourite" (click)="clickfav(tweet); $event.stopPropagation()">
-      <span *ngIf="!tweet.favorited; else favorited">
-        <fa-icon [icon]="faHeart" size="2x"></fa-icon>
-      </span>
-
-      <ng-template #favorited>
-        <fa-icon [icon]="fasHeart" size="2x" class="favourited"></fa-icon>
-      </ng-template>
-    </div>
-    <span> {{ tweet.favorite_count }} </span>
   </div>
 </li>

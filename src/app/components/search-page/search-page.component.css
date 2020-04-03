@@ -2,19 +2,18 @@
     margin: 0 auto;
     padding: 0;
   }
-.search{
+  .search {
     text-align: left;
     margin: 1em 1em 1em 2em;
- 
-}
-.icon{
+  }
+  .icon {
     position: relative;
     left: 2.7em;
-    top: .3em;
+    top: 0.3em;
     color: #1dcaff;
-}
-
-.input {
+  }
+  
+  .input {
     width: 80%;
     box-sizing: border-box;
     border: 2px solid #c0deed;
@@ -32,47 +31,54 @@
     border-color: #1dcaff;
     outline: none;
   }
-
-.input::placeholder {
-color:#1dcaff;
-}
-
-.input::-webkit-input-placeholder {
+  
+  .input::placeholder {
     color: #1dcaff;
-}
-.input::-moz-placeholder {
+  }
+  
+  .input::-webkit-input-placeholder {
     color: #1dcaff;
-}
-.input:-ms-input-placeholder {
+  }
+  .input::-moz-placeholder {
     color: #1dcaff;
-}
-.input:-moz-placeholder {
+  }
+  .input:-ms-input-placeholder {
     color: #1dcaff;
-}
-
-.quickly-search{
+  }
+  .input:-moz-placeholder {
+    color: #1dcaff;
+  }
+  
+  .quickly-search {
     text-align: left;
-    margin: 0 0 .5em 4em;
-}
-.quickly-search-item{
+    margin: 0 0 0.5em 4em;
+  }
+  .quickly-search-item {
     color: #a1becc;
     font-weight: bold;
     text-align: center;
     display: inline-block;
     font-size: 1.3em;
-    padding: .7em;
-}
-.quickly-search-item:hover{
+    padding: 0.7em;
+  }
+  .quickly-search-item:hover {
     color: #1dcaff;
     background-color: #f8fcfc;
     cursor: pointer;
     border-bottom: 2px solid;
     border-color: #1dcaff;
-}
-
-.subtitle{
-    margin-left: .7em;
+  }
+  
+  .subtitle {
+    margin-left: 0.7em;
     font-size: 1.2em;
-    margin-top:1.2em;
-    margin-bottom: .9em;
-}
+    margin-top: 1.2em;
+    margin-bottom: 0.9em;
+  }
+  
+  .spinnerBottom {
+    position: relative;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
