@@ -23,11 +23,6 @@
   <h3 class="subtitle">"{{ searchText }}" search results</h3>
   <div infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScroll()">
     <app-tweet [Tweets]="tweets"></app-tweet>
-    <div *ngIf="allTweetsLoaded">
-      <p class="allTweetsLoaded">
-        you have already seen all the tweets, upload to see new content
-      </p>
-    </div>
   </div>
 </ul>
 

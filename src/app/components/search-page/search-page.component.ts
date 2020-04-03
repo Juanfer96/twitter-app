@@ -52,11 +52,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   onScroll() {
-    if (this.cont >= 100) {
-      //when all the maximum number of tweets are loaded,a message is displayed in the html of the component
-      this.allTweetsLoaded = true;
-    }
-
+  
     if (this.notscrolly) {
       this.spinner.show(); //shows the spinner while the tweets are loading
       this.notscrolly = false;
