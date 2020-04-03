@@ -4,7 +4,6 @@ import { Observable, of } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { ITimeLineaConfiguration } from "../interfaces/timeLineConfigurationInterface";
 import { ITweet } from "../interfaces/tweetInterface";
-import { element } from "protractor";
 
 @Injectable({
   providedIn: "root"
