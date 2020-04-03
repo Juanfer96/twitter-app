@@ -74,7 +74,9 @@ export class SearchPageComponent implements OnInit {
   }
 
   setSelectedTrend(trendName: string){
-    trendName = trendName.slice(1);
+    if(trendName[0]=='#'){
+      trendName = trendName.slice(1);
+    }
     this.searchText= trendName;
     this.showSearchResults();
   }

@@ -1,9 +1,18 @@
-<img src="{{ tweet.user.profile_image_url }}" alt="" class="profileImage" />
+<section class="tweet-detail-wrapper">
+  <div class="tweetGoBack">
+    <fa-icon [icon]="faArrowLeft" size="2x" (click)="goBack()"></fa-icon>
+    <span >Tweet</span>
+  </div>
 
   <div class="tweetHead">
-    <span class="userName">{{ tweet.user.name }}</span>
-    <span class="screenName"> @{{ tweet.user.screen_name }}</span>
-    <span class="timeAgoTweet"> - {{ tweet.created_at | dateAgo }}</span>
+    <div class="profileImage"><img src="{{ tweet.user.profile_image_url }}" alt="ProfileImage"  /></div>
+    <div class="userName">
+      <span>{{ tweet.user.name }}</span>
+      <span *ngIf="tweet.user.verified">
+          <fa-icon [icon]="faCheck" size="xs" class="userVerified"></fa-icon>
+      </span>
+    </div>
+    <div class="screenName"><span> @{{ tweet.user.screen_name }}</span></div>
   </div>
 
   <div class="tweetBody">
@@ -12,24 +21,58 @@
 
   <div *ngIf="tweet.entities.media">
     <img
-      src="{{ tweet.entities.media.media_url }}"
+      src="{{ tweet.entities.media[0].media_url }}"
       
       alt="img not found"
       class="imageContent"
     />
   </div>
 
+  <div class="timeAgoTweet">
+    <span >  {{ tweet.created_at | date:'h:mm a.-d MMM. yy ' }}</span> 
+  </div>
+
   <div class="tweetFooter">
-    <div class="retweet">
-      
-      <span > {{ tweet.retweet_count }} </span>
+    <div class="retweet"> 
+      <span > {{ tweet.retweet_count }} Retweet</span>
     </div>
     <div class="favourite">
-      
-      <span > {{ tweet.favorite_count }} </span>
+      <span > {{ tweet.favorite_count }} Like</span>
     </div>
   </div>
-  
+
+  <div class="tweetIcons">
+    <div class="icon">
+     <span *ngIf="!tweet.favorited; else favorited">
+       <fa-icon class="iconHeart"   [icon]="faHeart"  size="3x" 
+      (click)="clickfav(); $event.stopPropagation()">
+     </fa-icon></span>
+
+    <ng-template #favorited>
+        <fa-icon [icon]="fasHeart" size="3x" class="favourited"></fa-icon>
+    </ng-template>
+
+    </div>
+    <div class="icon">
+      <span *ngIf="!tweet.retweeted; else retweetedDone">
+      <fa-icon  class="iconRe" [icon]="faRetweet" size="3x" 
+      (click)="clickReTweet(); $event.stopPropagation()">
+      </fa-icon>
+     </span>
+
+      <ng-template #retweetedDone>
+          <fa-icon class="retweeted" [icon]="faRetweet" size="3x"></fa-icon>
+      </ng-template>   
+      
+    </div>
+    <div class="icon">
+        <fa-icon class="iconCo" [icon]="faComment" size="3x"></fa-icon>
+    </div>
+  </div>
+
+</section>
+
+<app-footer></app-footer>
      
 
 
