@@ -5,6 +5,12 @@ var express = require('express'),
 var app = express();
 var T = new Twit(require('./keys.json'));
 
+
+app.use(express.static(__dirname+'/dist/ng-blog'));
+app.get('/',function(req,res){
+    res.sendFile(path.join(__dirname+'/dist/ng-blog/index.html'));
+});
+
 //CORS middleware
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
